@@ -9,10 +9,6 @@ class EmployeeDocument extends Model
 {
     protected $fillable = [
         'document',
-        'employee_id'
-    ];
-
-    protected $hidden = [
         'employee_id',
         'created_at',
         'updated_at',

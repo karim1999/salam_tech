@@ -9,10 +9,6 @@ class BrancheImage extends Model
 {
     protected $fillable = [
         'image',
-        'branche_id'
-    ];
-
-    protected $hidden = [
         'branche_id',
         'created_at',
         'updated_at',

@@ -28,9 +28,9 @@ class SpecialistController extends AdminController
         $grid = new Grid(new Specialist());
 
         $grid->column('id', __('Id'));
+        $grid->column('image', __('Image'))->image();
         $grid->column('name_ar', __('Name ar'));
         $grid->column('name_en', __('Name en'));
-        $grid->column('image', __('Image'))->image();
         $grid->column('created_at', __('Created at'));
 
         return $grid;

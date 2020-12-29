@@ -30,21 +30,10 @@ class Clinic extends Authenticatable
         'status',
         'city_id',
         'area_id',
+        'type',
     ];
 
     protected $hidden = [
-        'type',
-        'floor_no',
-        'block_no',
-        'address',
-        'latitude',
-        'longitude',
-        'work_days',
-        'work_time_from',
-        'work_time_to',
-        'status',
-        'city_id',
-        'area_id',
         'password',
     ];
 
@@ -54,8 +43,8 @@ class Clinic extends Authenticatable
         'amenities' => 'array',
         'work_days' => 'array',
         'profile_finish' => 'boolean',
-        'work_time_to' => 'timestamp',
-        'work_time_from' => 'timestamp',
+        'work_time_to' => 'time',
+        'work_time_from' => 'time',
         'created_at' => 'datetime:Y-m-d',
         'updated_at' => 'datetime:Y-m-d',
     ];

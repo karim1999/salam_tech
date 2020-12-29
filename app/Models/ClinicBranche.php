@@ -26,8 +26,8 @@ class ClinicBranche extends Model
 
     protected $casts = [
         'work_days' => 'array',
-        'work_time_to' => 'timestamp',
-        'work_time_from' => 'timestamp',
+        'work_time_to' => 'time',
+        'work_time_from' => 'time',
         'created_at' => 'datetime:Y-m-d',
         'updated_at' => 'datetime:Y-m-d',
     ];

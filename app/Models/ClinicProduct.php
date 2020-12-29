@@ -36,4 +36,8 @@ class ClinicProduct extends Model
     {
         if ($value) return asset(Storage::url($value));
     }
+
+    public function Operations(){
+        return $this->hasMany(ProductOperation::class, 'product_id');
+    }
 }

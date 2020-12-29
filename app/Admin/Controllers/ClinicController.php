@@ -34,24 +34,10 @@ class ClinicController extends AdminController
         $grid->column('name', __('Name'));
         $grid->column('email', __('Email'));
         $grid->column('phone', __('Phone'));
-//        $grid->column('password', __('Password'));
-//        $grid->column('branches_no', __('Branches no'));
-//        $grid->column('floor_no', __('Floor no'));
-//        $grid->column('block_no', __('Block no'));
         $grid->column('address', __('Address'));
-//        $grid->column('latitude', __('Latitude'));
-//        $grid->column('longitude', __('Longitude'));
-//        $grid->column('work_days', __('Work days'));
-//        $grid->column('work_time_from', __('Work time from'));
-//        $grid->column('work_time_to', __('Work time to'));
-//        $grid->column('services', __('Services'));
-//        $grid->column('amenities', __('Amenities'));
         $grid->column('website_url', __('Website url'))->link();
-//        $grid->column('type', __('Type'));
         $grid->column('profile_finish', __('Profile finish'))->bool();
         $grid->column('status', __('Status'))->bool();
-//        $grid->column('city_id', __('City id'));
-//        $grid->column('area_id', __('Area id'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
 
@@ -130,9 +116,9 @@ class ClinicController extends AdminController
                 if ($city) {
                     return [$city->id => $city->name_en];
                 }
-            })->ajax('/admin/api/cities')->load('area_id', '/admin/api/areas');;
+            })->ajax('/admin/api/cities')->load('area_id', '/admin/api/areas');
 
-            $form->select('area_id', __('Area'));
+            $form->select('area_id', __('Area'))->options(Area::all()->pluck('name_en','id'));
             $form->text('address', __('Address'));
             $form->number('block_no', __('Block no'))->default(0);
             $form->number('floor_no', __('Floor no'))->default(0);
@@ -153,21 +139,21 @@ class ClinicController extends AdminController
 
         })->tab('Images', function ($form) {
 
-            $form->hasMany('Images', function (Form\NestedForm $form) {
+            $form->hasMany('images', 'Images', function (Form\NestedForm $form) {
                 $form->image('image', __('Image'));
             });
 
         })->tab('Documents', function ($form) {
 
-            $form->hasMany('Documents', function (Form\NestedForm $form) {
+            $form->hasMany('documents', 'Documents', function (Form\NestedForm $form) {
+                $form->file('tax_id', __('Tax ID'));
                 $form->file('registration', __('Registration'));
                 $form->file('license', __('License'));
-                $form->number('tax_id', __('tax_id'));
             });
 
         })->tab('Branches', function ($form) {
 
-            $form->hasMany('Branches', function (Form\NestedForm $form) {
+            $form->hasMany('branches', 'Branches', function (Form\NestedForm $form) {
                 $form->mobile('phone', __('Phone'))->required();
                 $form->select('city_id', __('City'))->options(function ($id) {
                     $city = City::find($id);
@@ -177,7 +163,7 @@ class ClinicController extends AdminController
                     }
                 })->ajax('/admin/api/cities')->load('area_id', '/admin/api/areas');;
 
-                $form->select('area_id', __('Area'));
+                $form->select('area_id', __('Area'))->options(Area::all()->pluck('name_en','id'));
 
                 $form->multipleSelect('work_days', __('Work days'))
                     ->options(['Saturday' => 'Saturday', 'Sunday' => 'Sunday', 'Monday' => 'Monday',
@@ -192,27 +178,27 @@ class ClinicController extends AdminController
 
         })->tab('Specialists', function ($form) {
 
-            $form->multipleSelect('Specialists','Specialists')->options(Specialist::all()->pluck('name_en','id'));
+            $form->multipleSelect('specialists','Specialists')->options(Specialist::all()->pluck('name_en','id'));
 
         })->tab('Employees', function ($form) {
 
-            $form->hasMany('Employees', function (Form\NestedForm $form) {
+            $form->hasMany('employees', 'employees', function (Form\NestedForm $form) {
                 $form->text('name', __('Name'));
                 $form->image('image', __('Image'));
-                $form->text('id_employee', __('Id employee'));
+                $form->file('id_employee', __('Employee ID'));
                 $form->text('position', __('Position'));
                 $form->decimal('net_salary', __('Net salary'));
                 $form->decimal('gross_salary', __('Gross salary'));
                 $form->list('docs_checklist', __('Docs checklist'));
-                $form->switch('gender', __('Gender'))->default(1);
+                $form->radio('gender', 'Gender')->options(['1' => 'Male', '2'=> 'Female'])->default('1');
             });
 
         })->tab('Products', function ($form) {
 
-            $form->hasMany('Products', function (Form\NestedForm $form) {
+            $form->hasMany('products', 'Products', function (Form\NestedForm $form) {
                 $form->text('name', __('Name'));
                 $form->image('image', __('Image'));
-                $form->text('id_product', __('Id product'));
+                $form->text('id_product', __('Product ID'));
                 $form->text('unit_measure', __('Unit measure'));
                 $form->text('supplier_name', __('Supplier name'));
                 $form->text('id_supplier', __('Id supplier'));
@@ -222,11 +208,6 @@ class ClinicController extends AdminController
                 $form->date('min_stock_expire_date', __('Min stock expire date'))->default(date('Y-m-d'));
             });
 
-
-//        })->tab('Doctors', function ($form) {
-//
-//            $form->hasMany('Doctors', function (Form\NestedForm $form) {
-//            });
 
         })->tab('Settings', function ($form) {
 
@@ -238,9 +219,6 @@ class ClinicController extends AdminController
         $form->submitted(function (Form $form) {
             $form->ignore('password_confirmation');
         });
-
-//        $form->number('branches_no', __('Branches no'))->default(1);
-//        $form->switch('type', __('Type'))->default(1);
 
         return $form;
     }

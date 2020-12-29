@@ -4,15 +4,19 @@
     <list default="true" id="3966a211-dab0-4cbc-8a80-892bc4c80047" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/ClinicBrancheController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/ClinicBrancheController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/ClinicController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/ClinicController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/ClinicEmployeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/ClinicEmployeeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/ClinicProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/ClinicProductController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/SpecialistController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/SpecialistController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Admin/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/BrancheImage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/BrancheImage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Clinic.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Clinic.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/ClinicBranche.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ClinicBranche.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/ClinicEmployee.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ClinicEmployee.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/ClinicImage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ClinicImage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/ClinicProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ClinicProduct.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/ClinicSpecialist.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ClinicSpecialist.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Specialist.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Specialist.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/EmployeeAttendance.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/EmployeeAttendance.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/EmployeeDocument.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/EmployeeDocument.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/ProductOperation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ProductOperation.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +155,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Admin/Controllers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/vendor/laravel-admin" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -162,7 +166,11 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\projects\web\mr_anis\salamtech\api\app\Models" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\projects\web\mr_anis\salamtech\api\resources\views\vendor\laravel-admin" />
       <recent name="C:\projects\web\mr_anis\salamtech\api\app\Admin\Controllers" />
     </key>
   </component>
@@ -182,7 +190,8 @@
       <updated>1609187561072</updated>
       <workItem from="1609187562360" duration="12499000" />
       <workItem from="1609206471420" duration="75000" />
-      <workItem from="1609206581121" duration="2014000" />
+      <workItem from="1609206581121" duration="2640000" />
+      <workItem from="1609209460182" duration="7844000" />
     </task>
     <task id="LOCAL-00001" summary="fixed">
       <created>1609207171874</created>
@@ -191,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609207171874</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="clinics module">
+      <created>1609208606252</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1609208606252</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,20 +217,33 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed" />
+    <MESSAGE value="clinics module" />
+    <option name="LAST_COMMIT_MESSAGE" value="clinics module" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609207845853">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609245394089">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609207845853" />
-    <state x="585" y="108" key="CommitChangelistDialog2" timestamp="1609207171307">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609245394089" />
+    <state x="585" y="108" key="CommitChangelistDialog2" timestamp="1609208605673">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="108" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1609207171307" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1609207173096">
+    <state x="585" y="108" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1609208605673" />
+    <state x="727" y="243" key="NewPhpClassDialog" timestamp="1609243399304">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1609207173096" />
+    <state x="727" y="243" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609243399304" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1609208607438">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1609208607438" />
+    <state x="667" y="253" width="585" height="592" key="find.popup" timestamp="1609245309279">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="667" y="253" width="585" height="592" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1609245309279" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1609238495128">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1609238495128" />
   </component>
 </project>

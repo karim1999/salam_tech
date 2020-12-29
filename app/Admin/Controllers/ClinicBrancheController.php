@@ -2,6 +2,7 @@
 
 namespace App\Admin\Controllers;
 
+use App\Models\Area;
 use App\Models\City;
 use App\Models\Clinic;
 use App\Models\ClinicBranche;
@@ -39,7 +40,7 @@ class ClinicBrancheController extends AdminController
         $grid->column('work_time_from', __('Work time from'));
         $grid->column('work_time_to', __('Work time to'));
         $grid->column('clinic_id', __('Clinic'))->display(function ($id) {
-            return "<a href='".route('admin.clinics.edit', $id)."'>Clinic</a>";
+            return "<a href='".route('admin.clinics.clinics.edit', $id)."'>Clinic</a>";
         });
 //        $grid->column('area_id', __('Area id'));
 //        $grid->column('city_id', __('City id'));
@@ -87,30 +88,36 @@ class ClinicBrancheController extends AdminController
     {
         $form = new Form(new ClinicBranche());
 
-        $form->select('clinic_id', __('Clinic id'))->options(Clinic::all()->pluck('name','id'))->required();
-        $form->mobile('phone', __('Phone'))->required();
-        $form->select('city_id', __('City'))->options(function ($id) {
-            $city = City::find($id);
+        $form->tab('Basic info', function ($form) {
 
-            if ($city) {
-                return [$city->id => $city->name_en];
-            }
-        })->ajax('/admin/api/cities')->load('area_id', '/admin/api/areas');;
+            $form->select('clinic_id', __('Clinic id'))->options(Clinic::all()->pluck('name','id'))->required();
+            $form->mobile('phone', __('Phone'))->required();
+            $form->select('city_id', __('City'))->options(function ($id) {
+                $city = City::find($id);
 
-        $form->select('area_id', __('Area'));
+                if ($city) {
+                    return [$city->id => $city->name_en];
+                }
+            })->ajax('/admin/api/cities')->load('area_id', '/admin/api/areas');;
 
-        $form->multipleSelect('work_days', __('Work days'))
-            ->options(['Saturday' => 'Saturday', 'Sunday' => 'Sunday', 'Monday' => 'Monday',
-                'Tuesday'=> 'Tuesday', 'Wednesday' => 'Wednesday', 'Thursday' => 'Thursday', 'Friday' => 'Friday']);
-        $form->time('work_time_from', __('Work time from'))->default(date('H:i:s'));
-        $form->time('work_time_to', __('Work time to'))->default(date('H:i:s'));
+            $form->select('area_id', __('Area'))->options(Area::all()->pluck('name_en','id'));
 
-        $form->text('address', __('Address'));
-        $form->number('block', __('Block no'))->default(0);
-        $form->number('floor', __('Floor no'))->default(0);
+            $form->multipleSelect('work_days', __('Work days'))
+                ->options(['Saturday' => 'Saturday', 'Sunday' => 'Sunday', 'Monday' => 'Monday',
+                    'Tuesday'=> 'Tuesday', 'Wednesday' => 'Wednesday', 'Thursday' => 'Thursday', 'Friday' => 'Friday']);
+            $form->time('work_time_from', __('Work time from'))->default(date('H:i:s'));
+            $form->time('work_time_to', __('Work time to'))->default(date('H:i:s'));
 
-        $form->hasMany('Images', 'Images', function (Form\NestedForm $form) {
-            $form->image('image', __('Image'));
+            $form->text('address', __('Address'));
+            $form->number('block', __('Block no'))->default(0);
+            $form->number('floor', __('Floor no'))->default(0);
+
+        })->tab('Images', function ($form) {
+
+            $form->hasMany('images', 'Images', function (Form\NestedForm $form) {
+                $form->image('image', __('Image'));
+            });
+
         });
 
         return $form;

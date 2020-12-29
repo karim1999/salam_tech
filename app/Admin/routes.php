@@ -13,17 +13,24 @@ Route::group([
 
     $router->get('/', 'HomeController@index')->name('home');
     $router->resource('doctors', DoctorController::class);
-    $router->resource('clinics', ClinicController::class);
+    $router->resource('posts', PostController::class);
 
     $router->group([
-        'prefix'        => 'clinic',
-        'as'            => 'clinic.',
+        'prefix'        => 'clinics',
+        'as'            => 'clinics.',
     ], function (Router $router) {
+        $router->resource('clinics', ClinicController::class);
         $router->resource('branches', ClinicBrancheController::class);
         $router->resource('documents', ClinicDocumentController::class);
         $router->resource('images', ClinicImageController::class);
         $router->resource('products', ClinicProductController::class);
-        $router->resource('employees', ClinicEmployeeController::class);
+        $router->group([
+            'prefix'        => 'employees',
+            'as'            => 'employees.',
+        ], function (Router $router) {
+            $router->resource('employees', ClinicEmployeeController::class);
+            $router->resource('attendances', EmployeeAttendanceController::class);
+        });
         $router->resource('specialists', SpecialistController::class);
     });
 

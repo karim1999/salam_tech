@@ -40,7 +40,7 @@ class ClinicProductController extends AdminController
         $grid->column('min_stock_expire_date', __('Min stock expire date'));
         $grid->column('clinic_id', __('Clinic'))->display(function ($id) {
 
-            return "<a href='".route('admin.clinics.edit', $id)."'>Clinic</a>";
+            return "<a href='".route('admin.clinics.clinics.edit', $id)."'>Clinic</a>";
 
         });
         $grid->column('created_at', __('Created at'))->datetime("Y-m-d");
@@ -86,18 +86,29 @@ class ClinicProductController extends AdminController
     {
         $form = new Form(new ClinicProduct());
 
-        $form->select('clinic_id', __('Clinic id'))->options(Clinic::all()->pluck('name','id'))->required();
-        $form->text('name', __('Name'));
-        $form->image('image', __('Image'));
-        $form->text('id_product', __('Id product'));
-        $form->text('unit_measure', __('Unit measure'));
-        $form->text('supplier_name', __('Supplier name'));
-        $form->text('id_supplier', __('Id supplier'));
-        $form->number('quantity', __('Quantity'));
-        $form->number('min_stock_quantity', __('Min stock quantity'));
-        $form->date('expire_date', __('Expire date'))->default(date('Y-m-d'));
-        $form->date('min_stock_expire_date', __('Min stock expire date'))->default(date('Y-m-d'));
+        $form->tab('Basic info', function ($form) {
 
+            $form->select('clinic_id', __('Clinic id'))->options(Clinic::all()->pluck('name','id'))->required();
+            $form->text('name', __('Name'));
+            $form->image('image', __('Image'));
+            $form->text('id_product', __('Product ID'));
+            $form->text('unit_measure', __('Unit measure'));
+            $form->text('supplier_name', __('Supplier name'));
+            $form->text('id_supplier', __('Id supplier'));
+            $form->number('quantity', __('Quantity'));
+            $form->number('min_stock_quantity', __('Min stock quantity'));
+            $form->date('expire_date', __('Expire date'))->default(date('Y-m-d'));
+            $form->date('min_stock_expire_date', __('Min stock expire date'))->default(date('Y-m-d'));
+
+        })->tab('Operations', function ($form) {
+
+            $form->hasMany('operations', 'Operations', function (Form\NestedForm $form) {
+                $form->radio('type', 'Type')->options(['1' => 'Deposit', '2'=> 'Withdraw'])->default('1');
+                $form->number('quantity', __('Quantity'));
+                $form->date('date', __('Date'))->default(date('Y-m-d'));
+            });
+
+        });
         return $form;
     }
 }

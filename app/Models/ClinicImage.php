@@ -17,8 +17,11 @@ class ClinicImage extends Model
         'updated_at',
     ];
 
-    public function getImageAttribute($value)
-    {
-        if ($value) return asset(Storage::url($value));
+//    public function getImageAttribute($value)
+//    {
+//        if ($value) return asset(Storage::url($value));
+//    }
+    public function clinic (){
+        return $this->belongsTo(Clinic::class, 'clinic_id');
     }
 }

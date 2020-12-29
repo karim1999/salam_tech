@@ -11,11 +11,12 @@ class ProductOperation extends Model
         'date',
         'type',
         'product_id',
-    ];
-
-    protected $hidden = [
-        'product_id',
         'created_at',
         'updated_at',
     ];
+
+    public function Product(){
+        return $this->belongsTo(ClinicProduct::class, 'product_id');
+    }
+
 }

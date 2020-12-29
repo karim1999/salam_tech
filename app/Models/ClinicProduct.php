@@ -26,6 +26,12 @@ class ClinicProduct extends Model
     protected $hidden = [
     ];
 
+    protected $casts = [
+        'created_at' => 'datetime:Y-m-d',
+        'updated_at' => 'datetime:Y-m-d',
+    ];
+
+
     public function getImageAttribute($value)
     {
         if ($value) return asset(Storage::url($value));

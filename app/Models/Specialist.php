@@ -15,12 +15,20 @@ class Specialist extends Model
     ];
 
     protected $hidden = [
-        'created_at',
-        'updated_at',
     ];
+    protected $casts = [
+        'created_at' => 'datetime:Y-m-d',
+        'updated_at' => 'datetime:Y-m-d',
+    ];
+
 
     public function getImageAttribute($value)
     {
         if ($value) return asset(Storage::url($value));
     }
+    public function Clinics()
+    {
+        return $this->belongsToMany(Clinic::class, 'clinic_specialists');
+    }
+
 }

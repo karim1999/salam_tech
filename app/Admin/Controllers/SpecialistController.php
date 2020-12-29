@@ -2,6 +2,7 @@
 
 namespace App\Admin\Controllers;
 
+use App\Models\Clinic;
 use App\Models\Specialist;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
@@ -29,9 +30,8 @@ class SpecialistController extends AdminController
         $grid->column('id', __('Id'));
         $grid->column('name_ar', __('Name ar'));
         $grid->column('name_en', __('Name en'));
-        $grid->column('image', __('Image'));
+        $grid->column('image', __('Image'))->image();
         $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
 
         return $grid;
     }
@@ -65,10 +65,10 @@ class SpecialistController extends AdminController
     {
         $form = new Form(new Specialist());
 
-        $form->text('name_ar', __('Name ar'));
-        $form->text('name_en', __('Name en'));
+        $form->text('name_ar', __('Name ar'))->required();
+        $form->text('name_en', __('Name en'))->required();
         $form->image('image', __('Image'));
-
+        $form->multipleSelect('Clinics','Clinics')->options(Clinic::all()->pluck('name','id'));
         return $form;
     }
 }

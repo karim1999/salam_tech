@@ -17,16 +17,15 @@ class ClinicEmployee extends Model
         'gender',
         'docs_checklist',
         'clinic_id',
-    ];
-
-    protected $hidden = [
-        'clinic',
         'created_at',
         'updated_at',
     ];
 
+
     protected $casts = [
         'docs_checklist' => 'array',
+        'created_at' => 'datetime:Y-m-d',
+        'updated_at' => 'datetime:Y-m-d',
     ];
 
     public function setDocsChecklistAttribute($value)

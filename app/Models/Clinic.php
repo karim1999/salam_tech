@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Storage;
 
 class Clinic extends Authenticatable
 {
-    protected $with= ['Images', 'Documents'];
     protected $fillable = [
         'name',
         'email',

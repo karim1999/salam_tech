@@ -3,6 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="3966a211-dab0-4cbc-8a80-892bc4c80047" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/ClinicBrancheController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/ClinicBrancheController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/ClinicEmployeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/ClinicEmployeeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/ClinicProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/ClinicProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/SpecialistController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/SpecialistController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Clinic.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Clinic.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/ClinicBranche.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ClinicBranche.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/ClinicEmployee.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ClinicEmployee.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/ClinicProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ClinicProduct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/ClinicSpecialist.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ClinicSpecialist.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Specialist.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Specialist.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +147,9 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Admin/Controllers" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -170,21 +182,39 @@
       <updated>1609187561072</updated>
       <workItem from="1609187562360" duration="12499000" />
       <workItem from="1609206471420" duration="75000" />
-      <workItem from="1609206581121" duration="466000" />
+      <workItem from="1609206581121" duration="2014000" />
     </task>
+    <task id="LOCAL-00001" summary="fixed">
+      <created>1609207171874</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1609207171874</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609205855166">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609207845853">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609205855166" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1609206305857">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609207845853" />
+    <state x="585" y="108" key="CommitChangelistDialog2" timestamp="1609207171307">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1609206305857" />
+    <state x="585" y="108" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1609207171307" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1609207173096">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1609207173096" />
   </component>
 </project>

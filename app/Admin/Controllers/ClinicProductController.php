@@ -38,9 +38,13 @@ class ClinicProductController extends AdminController
         $grid->column('min_stock_quantity', __('Min stock quantity'));
         $grid->column('expire_date', __('Expire date'))->datetime();
         $grid->column('min_stock_expire_date', __('Min stock expire date'));
-        $grid->column('clinic_id', __('Clinic'));
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
+        $grid->column('clinic_id', __('Clinic'))->display(function ($id) {
+
+            return "<a href='".route('admin.clinics.edit', $id)."'>Clinic</a>";
+
+        });
+        $grid->column('created_at', __('Created at'))->datetime("Y-m-d");
+//        $grid->column('updated_at', __('Updated at'));
 
         return $grid;
     }
@@ -82,6 +86,7 @@ class ClinicProductController extends AdminController
     {
         $form = new Form(new ClinicProduct());
 
+        $form->select('clinic_id', __('Clinic id'))->options(Clinic::all()->pluck('name','id'))->required();
         $form->text('name', __('Name'));
         $form->image('image', __('Image'));
         $form->text('id_product', __('Id product'));
@@ -92,7 +97,6 @@ class ClinicProductController extends AdminController
         $form->number('min_stock_quantity', __('Min stock quantity'));
         $form->date('expire_date', __('Expire date'))->default(date('Y-m-d'));
         $form->date('min_stock_expire_date', __('Min stock expire date'))->default(date('Y-m-d'));
-        $form->select('clinic_id', __('Clinic id'))->options(Clinic::all()->pluck('name','id'));
 
         return $form;
     }

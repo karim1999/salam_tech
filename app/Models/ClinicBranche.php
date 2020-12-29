@@ -19,20 +19,17 @@ class ClinicBranche extends Model
         'area_id',
         'city_id',
         'clinic_id',
-    ];
-
-    protected $hidden = [
-        'area_id',
-        'city_id',
-        'clinic_id',
         'created_at',
         'updated_at',
     ];
+
 
     protected $casts = [
         'work_days' => 'array',
         'work_time_to' => 'timestamp',
         'work_time_from' => 'timestamp',
+        'created_at' => 'datetime:Y-m-d',
+        'updated_at' => 'datetime:Y-m-d',
     ];
 
     public function setWorkDaysAttribute($value)

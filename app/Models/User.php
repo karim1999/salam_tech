@@ -29,20 +29,18 @@ class User extends Authenticatable
         'status',
         'city_id',
         'area_id',
+        'status',
     ];
 
     protected $hidden = [
         'password',
-        'status',
-        'city_id',
-        'area_id',
-        'created_at',
-        'updated_at',
     ];
 
     protected $casts = [
         'status' => 'boolean',
         'profile_finish' => 'boolean',
+        'created_at' => 'datetime:Y-m-d',
+        'updated_at' => 'datetime:Y-m-d',
     ];
 
     public function setPasswordAttribute($value)
@@ -65,6 +63,10 @@ class User extends Authenticatable
         if ($value) return asset(Storage::url($value));
     }
 
+    public function Favorites()
+    {
+        return $this->belongsToMany(Doctor::class, 'favorites');
+    }
     public function City()
     {
         return $this->belongsTo(City::class, 'city_id');
@@ -78,6 +80,10 @@ class User extends Authenticatable
     public function Health()
     {
         return $this->hasOne(UserHealth::class, 'user_id');
+    }
+    public function Healths()
+    {
+        return $this->hasMany(UserHealth::class, 'user_id');
     }
 
     public function Addresses()

@@ -10,13 +10,13 @@ class Emr extends Model
         'report',
         'user_id',
         'doctor_id',
-    ];
-
-    protected $hidden = [
         'created_at',
         'updated_at',
-        'user_id',
-        'doctor_id',
+    ];
+
+    protected $casts = [
+        'created_at' => 'datetime:Y-m-d',
+        'updated_at' => 'datetime:Y-m-d',
     ];
 
     public function User()

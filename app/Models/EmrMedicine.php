@@ -12,9 +12,8 @@ class EmrMedicine extends Model
         'emr_id',
     ];
 
-    protected $hidden = [
-        'created_at',
-        'updated_at',
-        'emr_id',
+    protected $casts = [
+        'created_at' => 'datetime:Y-m-d',
+        'updated_at' => 'datetime:Y-m-d',
     ];
 }

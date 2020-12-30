@@ -16,13 +16,9 @@ class Rate extends Model
         'appointment_id',
     ];
 
-    protected $hidden = [
-        'created_at',
-        'updated_at',
-        'sender',
-        'user_id',
-        'doctor_id',
-        'appointment_id',
+    protected $casts = [
+        'created_at' => 'datetime:Y-m-d',
+        'updated_at' => 'datetime:Y-m-d',
     ];
 
     public function User()

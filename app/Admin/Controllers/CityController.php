@@ -27,10 +27,14 @@ class CityController extends AdminController
         $grid = new Grid(new City());
 
         $grid->column('id', __('Id'));
-        $grid->column('name_ar', __('Name ar'));
-        $grid->column('name_en', __('Name en'));
+        $grid->column('name_ar', __('Name ar'))->filter();
+        $grid->column('name_en', __('Name en'))->filter();
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
+
+        $grid->actions(function ($actions) {
+            $actions->disableView();
+        });
 
         return $grid;
     }
@@ -63,8 +67,20 @@ class CityController extends AdminController
     {
         $form = new Form(new City());
 
-        $form->text('name_ar', __('Name ar'));
-        $form->text('name_en', __('Name en'));
+        $form->tab('Basic info', function ($form) {
+
+            $form->text('name_ar', __('Name ar'))->required();
+            $form->text('name_en', __('Name en'))->required();
+
+        })->tab('Areas', function ($form) {
+
+            $form->hasMany('areas', 'Areas', function (Form\NestedForm $form) {
+                $form->text('name_ar', __('Name ar'))->required();
+                $form->text('name_en', __('Name en'))->required();
+            });
+
+        });
+
 
         return $form;
     }

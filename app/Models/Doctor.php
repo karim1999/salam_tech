@@ -43,25 +43,20 @@ class Doctor extends Authenticatable
     ];
 
     protected $hidden = [
-        'views',
-        'status',
         'password',
-        'created_at',
-        'updated_at',
-        'specialist_id',
-        'clinic_id',
-        'city_id',
-        'area_id',
     ];
 
     protected $casts = [
         'status' => 'boolean',
         'services' => 'array',
         'work_days' => 'array',
+        'sub_specialist' => 'array',
         'home_visit' => 'boolean',
         'profile_finish' => 'boolean',
-        'work_time_to' => 'timestamp',
-        'work_time_from' => 'timestamp',
+        'work_time_to' => 'time',
+        'work_time_from' => 'time',
+        'created_at' => 'datetime:Y-m-d',
+        'updated_at' => 'datetime:Y-m-d',
     ];
 
     public function setPasswordAttribute($value)

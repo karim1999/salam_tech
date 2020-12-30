@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class PharmacyBranche extends Model
 {
     protected $fillable = [
-        'floor_no',
-        'block_no',
+        'floor',
+        'block',
         'address',
         'latitude',
         'longitude',
@@ -21,18 +21,13 @@ class PharmacyBranche extends Model
         'pharmacy_id',
     ];
 
-    protected $hidden = [
-        'area_id',
-        'city_id',
-        'pharmacy_id',
-        'created_at',
-        'updated_at',
-    ];
 
     protected $casts = [
         'work_days' => 'array',
-        'work_time_from' => 'timestamp',
-        'work_time_to' => 'timestamp',
+        'work_time_to' => 'time',
+        'work_time_from' => 'time',
+        'created_at' => 'datetime:Y-m-d',
+        'updated_at' => 'datetime:Y-m-d',
     ];
 
     public function setWorkDaysAttribute($value)

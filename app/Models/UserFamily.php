@@ -15,12 +15,6 @@ class UserFamily extends Model
         'user_id',
     ];
 
-    protected $hidden = [
-        'created_at',
-        'updated_at',
-        'user_id',
-    ];
-
     public function getImageAttribute($value)
     {
         if ($value) return asset(Storage::url($value));

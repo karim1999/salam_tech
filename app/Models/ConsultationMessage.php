@@ -13,15 +13,10 @@ class ConsultationMessage extends Model
         'consultation_id',
     ];
 
-    protected $hidden = [
-        'created_at',
-        'updated_at',
-        'consultation_id',
-    ];
-
     protected $casts = [
+        'created_at' => 'datetime:Y-m-d',
+        'updated_at' => 'datetime:Y-m-d',
         'seen' => 'boolean',
-        'created_at' => 'timestamp',
     ];
 
     protected $appends = [

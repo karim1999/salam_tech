@@ -27,17 +27,22 @@ class EmployeeAttendanceController extends AdminController
     {
         $grid = new Grid(new EmployeeAttendance());
 
-        $grid->column('id', __('Id'));
-        $grid->column('date', __('Date'));
-        $grid->column('status', __('Status'))->using(['1' => 'Show Up', '2'=> 'Late', '3'=> 'Did not show up'])->default('1');
-        $grid->column('delay_time', __('Delay time'));
-        $grid->column('deduction', __('Deduction'));
-        $grid->column('paid_leave', __('Paid leave'))->bool();
+        $grid->column('id', __('Id'))->filter();
+        $grid->column('date', __('Date'))->filter();
+        $grid->column('status', __('Status'))->using(['1' => 'Show Up', '2'=> 'Late', '3'=> 'Did not show up'])->default('1')->filter();
+        $grid->column('delay_time', __('Delay time'))->filter();
+        $grid->column('deduction', __('Deduction'))->filter();
+        $grid->column('paid_leave', __('Paid leave'))->bool()->filter();
         $grid->column('employee_id', __('Employee'))->display(function ($id) {
             return "<a href='".route('admin.clinics.employees.employees.edit', $id)."'>Employee</a>";
+        })->filter();
+        $grid->column('created_at', __('Created at'))->filter();
+        $grid->column('updated_at', __('Updated at'))->filter();
+
+
+        $grid->actions(function ($actions) {
+            $actions->disableView();
         });
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
 
         return $grid;
     }

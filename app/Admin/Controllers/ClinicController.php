@@ -29,17 +29,21 @@ class ClinicController extends AdminController
     {
         $grid = new Grid(new Clinic());
 
-        $grid->column('id', __('Id'));
+        $grid->column('id', __('Id'))->filter();
         $grid->column('image', __('Image'))->image();
-        $grid->column('name', __('Name'));
-        $grid->column('email', __('Email'));
-        $grid->column('phone', __('Phone'));
-        $grid->column('address', __('Address'));
-        $grid->column('website_url', __('Website url'))->link();
-        $grid->column('profile_finish', __('Profile finish'))->bool();
-        $grid->column('status', __('Status'))->bool();
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
+        $grid->column('name', __('Name'))->filter();
+        $grid->column('email', __('Email'))->filter();
+        $grid->column('phone', __('Phone'))->filter();
+        $grid->column('address', __('Address'))->filter();
+        $grid->column('website_url', __('Website url'))->link()->filter();
+        $grid->column('profile_finish', __('Profile finish'))->bool()->filter();
+        $grid->column('status', __('Status'))->bool()->filter();
+        $grid->column('created_at', __('Created at'))->filter();
+        $grid->column('updated_at', __('Updated at'))->filter();
+
+        $grid->actions(function ($actions) {
+            $actions->disableView();
+        });
 
         return $grid;
     }
@@ -104,8 +108,9 @@ class ClinicController extends AdminController
                 ->creationRules(['required', "unique:clinics,phone"])
                 ->updateRules(['required', "unique:clinics,phone,{{id}}"]);
 
-            $form->password('password', __('Password'))->creationRules('required|min:6|confirmed');
-            $form->password('password_confirmation', __('Password Conformation'))->creationRules('required|min:6');
+            $form->password('password', __('Password'))->creationRules('required|min:6|confirmed')
+                ->updateRules('sometimes|nullable|min:6|confirmed');
+            $form->password('password_confirmation', __('Password Conformation'))->creationRules('required|min:6')->updateRules('sometimes|nullable|min:6');
             $form->url('website_url', __('Website url'));
 
         })->tab('Address', function ($form) {
@@ -187,9 +192,9 @@ class ClinicController extends AdminController
                 $form->image('image', __('Image'));
                 $form->file('id_employee', __('Employee ID'));
                 $form->text('position', __('Position'));
-                $form->decimal('net_salary', __('Net salary'));
-                $form->decimal('gross_salary', __('Gross salary'));
-                $form->list('docs_checklist', __('Docs checklist'));
+                $form->decimal('net_salary', __('Net salary'))->default(0);
+                $form->decimal('gross_salary', __('Gross salary'))->default(0);
+//                $form->list('docs_checklist', __('Docs checklist'));
                 $form->radio('gender', 'Gender')->options(['1' => 'Male', '2'=> 'Female'])->default('1');
             });
 

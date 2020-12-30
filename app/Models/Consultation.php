@@ -12,12 +12,12 @@ class Consultation extends Model
         'updated_at',
     ];
 
-    protected $hidden = [
-        'created_at',
-        'updated_at',
-        'user_id',
-        'doctor_id',
+    protected $casts = [
+        'created_at' => 'datetime:Y-m-d',
+        'updated_at' => 'datetime:Y-m-d',
     ];
+
+    protected $with= ['Messages'];
 
     public function User()
     {
@@ -27,5 +27,10 @@ class Consultation extends Model
     public function Doctor()
     {
         return $this->belongsTo(Doctor::class, 'doctor_id');
+    }
+
+    public function Messages()
+    {
+        return $this->belongsTo(ConsultationMessage::class, 'consultation_id');
     }
 }

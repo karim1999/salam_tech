@@ -22,18 +22,12 @@ class UserHealth extends Authenticatable
         'user_id',
     ];
 
-    protected $hidden = [
-        'created_at',
-        'updated_at',
-        'user_id',
-    ];
-
     protected $casts = [
-        'genetic_history' => 'array',
-        'illness_history' => 'array',
-        'allergies' => 'array',
-        'prescription' => 'array',
-        'operations' => 'array',
+//        'genetic_history' => 'array',
+//        'illness_history' => 'array',
+//        'allergies' => 'array',
+//        'prescription' => 'array',
+//        'operations' => 'array',
     ];
 
     public function setPasswordAttribute($value)
@@ -41,28 +35,28 @@ class UserHealth extends Authenticatable
         if ($value) return $this->attributes['password'] = bcrypt($value);
     }
 
-    public function setGeneticHistoryAttribute($value)
-    {
-        if ($value) $this->attributes['genetic_history'] = json_encode($value);
-    }
-
-    public function setIllnessHistoryAttribute($value)
-    {
-        if ($value) $this->attributes['illness_history'] = json_encode($value);
-    }
-
-    public function setAllergiesAttribute($value)
-    {
-        if ($value) $this->attributes['allergies'] = json_encode($value);
-    }
-
-    public function setPrescriptionAttribute($value)
-    {
-        if ($value) $this->attributes['prescription'] = json_encode($value);
-    }
-
-    public function setOperationsAttribute($value)
-    {
-        if ($value) $this->attributes['operations'] = json_encode($value);
-    }
+//    public function setGeneticHistoryAttribute($value)
+//    {
+//        if ($value) $this->attributes['genetic_history'] = json_encode($value);
+//    }
+//
+//    public function setIllnessHistoryAttribute($value)
+//    {
+//        if ($value) $this->attributes['illness_history'] = json_encode($value);
+//    }
+//
+//    public function setAllergiesAttribute($value)
+//    {
+//        if ($value) $this->attributes['allergies'] = json_encode($value);
+//    }
+//
+//    public function setPrescriptionAttribute($value)
+//    {
+//        if ($value) $this->attributes['prescription'] = json_encode($value);
+//    }
+//
+//    public function setOperationsAttribute($value)
+//    {
+//        if ($value) $this->attributes['operations'] = json_encode($value);
+//    }
 }

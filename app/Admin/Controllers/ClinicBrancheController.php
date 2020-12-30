@@ -30,23 +30,26 @@ class ClinicBrancheController extends AdminController
         $grid = new Grid(new ClinicBranche());
 
         $grid->column('id', __('Id'));
-        $grid->column('phone', __('Phone'));
-        $grid->column('floor', __('Floor'));
-        $grid->column('block', __('Block'));
-        $grid->column('address', __('Address'));
-//        $grid->column('latitude', __('Latitude'));
-//        $grid->column('longitude', __('Longitude'));
-//        $grid->column('work_days', __('Work days'));
-        $grid->column('work_time_from', __('Work time from'));
-        $grid->column('work_time_to', __('Work time to'));
+        $grid->column('phone', __('Phone'))->filter();
+        $grid->column('floor', __('Floor'))->filter();
+        $grid->column('block', __('Block'))->filter();
+        $grid->column('address', __('Address'))->filter();
+//        $grid->column('latitude', __('Latitude'))->filter();
+//        $grid->column('longitude', __('Longitude'))->filter();
+//        $grid->column('work_days', __('Work days'))->filter();
+        $grid->column('work_time_from', __('Work time from'))->filter();
+        $grid->column('work_time_to', __('Work time to'))->filter();
         $grid->column('clinic_id', __('Clinic'))->display(function ($id) {
             return "<a href='".route('admin.clinics.clinics.edit', $id)."'>Clinic</a>";
-        });
+        })->filter();
 //        $grid->column('area_id', __('Area id'));
 //        $grid->column('city_id', __('City id'));
-        $grid->column('created_at', __('Created at'));
+        $grid->column('created_at', __('Created at'))->filter();
 //        $grid->column('updated_at', __('Updated at'));
 
+        $grid->actions(function ($actions) {
+            $actions->disableView();
+        });
         return $grid;
     }
 

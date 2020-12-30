@@ -27,24 +27,29 @@ class ClinicProductController extends AdminController
     {
         $grid = new Grid(new ClinicProduct());
 
-        $grid->column('id', __('Id'));
-        $grid->column('name', __('Name'));
+        $grid->column('id', __('Id'))->filter();
+        $grid->column('name', __('Name'))->filter();
         $grid->column('image', __('Image'))->image();
-        $grid->column('id_product', __('Id product'));
-        $grid->column('unit_measure', __('Unit measure'));
-        $grid->column('supplier_name', __('Supplier name'));
-        $grid->column('id_supplier', __('Id supplier'));
-        $grid->column('quantity', __('Quantity'));
-        $grid->column('min_stock_quantity', __('Min stock quantity'));
-        $grid->column('expire_date', __('Expire date'))->datetime();
-        $grid->column('min_stock_expire_date', __('Min stock expire date'));
+        $grid->column('id_product', __('Id product'))->filter();
+        $grid->column('unit_measure', __('Unit measure'))->filter();
+        $grid->column('supplier_name', __('Supplier name'))->filter();
+        $grid->column('id_supplier', __('Id supplier'))->filter();
+        $grid->column('quantity', __('Quantity'))->filter();
+        $grid->column('min_stock_quantity', __('Min stock quantity'))->filter();
+        $grid->column('expire_date', __('Expire date'))->datetime()->filter();
+        $grid->column('min_stock_expire_date', __('Min stock expire date'))->filter();
         $grid->column('clinic_id', __('Clinic'))->display(function ($id) {
 
             return "<a href='".route('admin.clinics.clinics.edit', $id)."'>Clinic</a>";
 
-        });
-        $grid->column('created_at', __('Created at'))->datetime("Y-m-d");
+        })->filter();
+        $grid->column('created_at', __('Created at'))->datetime("Y-m-d")->filter();
 //        $grid->column('updated_at', __('Updated at'));
+
+
+        $grid->actions(function ($actions) {
+            $actions->disableView();
+        });
 
         return $grid;
     }

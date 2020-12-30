@@ -17,13 +17,6 @@ class UserAddress extends Model
         'user_id',
     ];
 
-    protected $hidden = [
-        'created_at',
-        'updated_at',
-        'area_id',
-        'city_id',
-        'user_id',
-    ];
 
     public function City()
     {

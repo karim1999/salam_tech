@@ -2,7 +2,12 @@
 
 namespace App\Admin\Controllers;
 
+use App\Models\Area;
+use App\Models\City;
+use App\Models\Clinic;
+use App\Models\ClinicBranche;
 use App\Models\Doctor;
+use App\Models\Specialist;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -26,40 +31,36 @@ class DoctorController extends AdminController
     {
         $grid = new Grid(new Doctor());
 
-        $grid->column('id', __('Id'));
-        $grid->column('name', __('Name'));
-        $grid->column('email', __('Email'));
-        $grid->column('phone', __('Phone'));
-        $grid->column('password', __('Password'));
-        $grid->column('image', __('Image'));
-        $grid->column('birth_date', __('Birth date'));
-        $grid->column('gender', __('Gender'));
-        $grid->column('sub_specialist', __('Sub specialist'));
-        $grid->column('seniority_level', __('Seniority level'));
-        $grid->column('floor_no', __('Floor no'));
-        $grid->column('block_no', __('Block no'));
-        $grid->column('address', __('Address'));
-        $grid->column('latitude', __('Latitude'));
-        $grid->column('longitude', __('Longitude'));
-        $grid->column('work_days', __('Work days'));
-        $grid->column('work_time_from', __('Work time from'));
-        $grid->column('work_time_to', __('Work time to'));
-        $grid->column('fees', __('Fees'));
-        $grid->column('patient_hour', __('Patient hour'));
-        $grid->column('home_visit', __('Home visit'));
-        $grid->column('home_visit_fees', __('Home visit fees'));
-        $grid->column('services', __('Services'));
-        $grid->column('rate', __('Rate'));
-        $grid->column('views', __('Views'));
-        $grid->column('profile_finish', __('Profile finish'));
-        $grid->column('status', __('Status'));
-        $grid->column('specialist_id', __('Specialist id'));
-        $grid->column('city_id', __('City id'));
-        $grid->column('area_id', __('Area id'));
-        $grid->column('clinic_id', __('Clinic id'));
-        $grid->column('clinic_branch_id', __('Clinic branch id'));
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
+        $grid->column('id', __('Id'))->filter();
+        $grid->column('image', __('Image'))->image();
+        $grid->column('name', __('Name'))->filter();
+        $grid->column('email', __('Email'))->filter();
+        $grid->column('phone', __('Phone'))->filter();
+        $grid->column('birth_date', __('Birth date'))->filter();
+        $grid->column('gender', __('Gender'))->using(['1' => 'female', '2' => 'male'])->filter();
+
+        $grid->column('views', __('Views'))->filter();
+
+        $grid->column('clinic_id', __('Clinic'))->display(function ($id) {
+            return "<a href='".route('admin.clinics.clinics.edit', $id)."'>Clinic</a>";
+        })->filter();
+
+        $grid->column('clinic_branch_id', __('Clinic'))->display(function ($id) {
+            return "<a href='".route('admin.clinics.branches.edit', $id)."'>Branch</a>";
+        })->filter();
+
+        $grid->column('specialist_id', __('Clinic'))->display(function ($id) {
+            return "<a href='".route('admin.clinics.specialists.edit', $id)."'>Specialist</a>";
+        })->filter();
+
+        $grid->column('profile_finish', __('Profile finish'))->bool()->filter();
+        $grid->column('status', __('Status'))->bool()->filter();
+        $grid->column('created_at', __('Created at'))->filter();
+
+
+        $grid->actions(function ($actions) {
+            $actions->disableView();
+        });
 
         return $grid;
     }
@@ -121,37 +122,98 @@ class DoctorController extends AdminController
     {
         $form = new Form(new Doctor());
 
-        $form->text('name', __('Name'));
-        $form->email('email', __('Email'));
-        $form->mobile('phone', __('Phone'));
-        $form->password('password', __('Password'));
-        $form->image('image', __('Image'));
-        $form->date('birth_date', __('Birth date'))->default(date('Y-m-d'));
-        $form->switch('gender', __('Gender'));
-        $form->text('sub_specialist', __('Sub specialist'));
-        $form->text('seniority_level', __('Seniority level'));
-        $form->number('floor_no', __('Floor no'));
-        $form->number('block_no', __('Block no'));
-        $form->text('address', __('Address'));
-        $form->decimal('latitude', __('Latitude'));
-        $form->decimal('longitude', __('Longitude'));
-        $form->textarea('work_days', __('Work days'));
-        $form->time('work_time_from', __('Work time from'))->default(date('H:i:s'));
-        $form->time('work_time_to', __('Work time to'))->default(date('H:i:s'));
-        $form->decimal('fees', __('Fees'));
-        $form->number('patient_hour', __('Patient hour'))->default(1);
-        $form->switch('home_visit', __('Home visit'));
-        $form->decimal('home_visit_fees', __('Home visit fees'));
-        $form->textarea('services', __('Services'));
-        $form->decimal('rate', __('Rate'));
-        $form->number('views', __('Views'));
-        $form->switch('profile_finish', __('Profile finish'));
-        $form->switch('status', __('Status'))->default(1);
-        $form->number('specialist_id', __('Specialist id'));
-        $form->number('city_id', __('City id'));
-        $form->number('area_id', __('Area id'));
-        $form->number('clinic_id', __('Clinic id'));
-        $form->number('clinic_branch_id', __('Clinic branch id'));
+        $form->tab('Basic info', function ($form) {
+
+            $form->select('clinic_id', __('Clinic'))->options(Clinic::all()->pluck('name','id'))->required();
+            $form->select('clinic_branch_id', __('Branch'))->options(ClinicBranche::all()->pluck('address','id'))->required();
+            $form->image('image', __('Image'));
+            $form->text('name', __('Name'))->required();
+            $form->email('email', __('Email'))->required()
+                ->creationRules(['required', "unique:doctors,email"])
+                ->updateRules(['required', "unique:doctors,email,{{id}}"]);
+            $form->mobile('phone', __('Phone'))->required()
+                ->creationRules(['required', "unique:doctors,phone"])
+                ->updateRules(['required', "unique:doctors,phone,{{id}}"]);
+
+            $form->password('password', __('Password'))->creationRules('required|min:6|confirmed')
+                ->updateRules('sometimes|nullable|min:6|confirmed');
+            $form->password('password_confirmation', __('Password Conformation'))->creationRules('required|min:6')->updateRules('sometimes|nullable|min:6');
+            $form->date('birth_date', __('Birth date'))->default(date('Y-m-d'));
+            $form->radio('gender', 'Gender')->options(['1' => 'Male', '2'=> 'Female'])->default('1');
+
+        })->tab('Address', function ($form) {
+
+            $form->select('city_id', __('City'))->options(function ($id) {
+                $city = City::find($id);
+
+                if ($city) {
+                    return [$city->id => $city->name_en];
+                }
+            })->ajax('/admin/api/cities')->load('area_id', '/admin/api/areas');
+
+            $form->select('area_id', __('Area'))->options(Area::all()->pluck('name_en','id'));
+            $form->text('address', __('Address'));
+            $form->number('block_no', __('Block no'))->default(0);
+            $form->number('floor_no', __('Floor no'))->default(0);
+//            $form->decimal('latitude', __('Latitude'));
+//            $form->decimal('longitude', __('Longitude'));
+
+        })->tab('Work Information', function ($form) {
+
+            $form->multipleSelect('work_days', __('Work days'))
+                ->options(['Saturday' => 'Saturday', 'Sunday' => 'Sunday', 'Monday' => 'Monday',
+                    'Tuesday'=> 'Tuesday', 'Wednesday' => 'Wednesday', 'Thursday' => 'Thursday', 'Friday' => 'Friday']);
+            $form->time('work_time_from', __('Work time from'))->default(date('H:i:s'));
+            $form->time('work_time_to', __('Work time to'))->default(date('H:i:s'));
+
+            $form->list('services', __('Services'));
+
+        })->tab('Pricing Information', function ($form) {
+
+            $form->decimal('fees', __('Fees'))->default(0);
+            $form->number('patient_hour', __('Patient hour'))->default(1);
+            $form->switch('home_visit', __('Home visit'));
+            $form->decimal('home_visit_fees', __('Home visit fees'))->default(0);
+//            $form->decimal('rate', __('Rate'));
+
+        })->tab('Extra Information', function ($form) {
+
+            $form->list('sub_specialist', __('Sub specialist'));
+            $form->text('seniority_level', __('Seniority level'));
+
+            $form->select('specialist_id', __('Specialist id'))->options(Specialist::all()->pluck('name_en','id'));
+
+
+        })->tab('Documents', function ($form) {
+
+            $form->hasMany('documents', 'Documents', function (Form\NestedForm $form) {
+                $form->file('link', __('File'));
+            });
+
+        })->tab('Certifications', function ($form) {
+
+            $form->hasMany('certifications', 'Certifications', function (Form\NestedForm $form) {
+                $form->text('title', __('Title'));
+                $form->textarea('body', __('Body'));
+            });
+
+        })->tab('Vacations', function ($form) {
+
+            $form->hasMany('vacations', 'Vacations', function (Form\NestedForm $form) {
+                $form->date('date', __('Date'));
+            });
+
+        })->tab('Settings', function ($form) {
+
+            $form->switch('profile_finish', __('Profile finish'))->default(1);
+            $form->switch('status', __('Status'))->default(1);
+
+        });
+
+        $form->submitted(function (Form $form) {
+            $form->ignore('password_confirmation');
+        });
+
 
         return $form;
     }

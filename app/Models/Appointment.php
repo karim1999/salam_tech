@@ -24,24 +24,14 @@ class Appointment extends Model
         'doctor_id',
     ];
 
-    protected $hidden = [
-        'fees',
-        'user_rated',
-        'doctor_rated',
-        'created_at',
-        'updated_at',
-        'user_id',
-        'user_address_id',
-        'user_family_id',
-        'doctor_id',
-    ];
-
     protected $casts = [
         'time' => 'timestamp',
         'user_rated' => 'boolean',
         'doctor_rated' => 'boolean',
         'user_canceled' => 'boolean',
         'doctor_canceled' => 'boolean',
+        'created_at' => 'datetime:Y-m-d',
+        'updated_at' => 'datetime:Y-m-d',
     ];
 
     public function User()

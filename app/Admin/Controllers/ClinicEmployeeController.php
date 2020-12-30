@@ -27,19 +27,24 @@ class ClinicEmployeeController extends AdminController
     {
         $grid = new Grid(new ClinicEmployee());
 
-        $grid->column('id', __('Id'));
+        $grid->column('id', __('Id'))->filter();
         $grid->column('image', __('Image'))->image();
-        $grid->column('name', __('Name'));
-        $grid->column('id_employee', __('Id employee'));
-        $grid->column('position', __('Position'));
-        $grid->column('net_salary', __('Net salary'));
-        $grid->column('gross_salary', __('Gross salary'));
-//        $grid->column('docs_checklist', __('Docs checklist'));
-//        $grid->column('gender', __('Gender'));
+        $grid->column('name', __('Name'))->filter();
+        $grid->column('id_employee', __('Id employee'))->filter();
+        $grid->column('position', __('Position'))->filter();
+        $grid->column('net_salary', __('Net salary'))->filter();
+        $grid->column('gross_salary', __('Gross salary'))->filter();
+//        $grid->column('docs_checklist', __('Docs checklist'))->filter();
+        $grid->column('gender', __('Gender'))->using(['1' => 'female', '2' => 'male'])->filter();
         $grid->column('clinic_id', __('Clinic'))->display(function ($id) {
             return "<a href='".route('admin.clinics.clinics.edit', $id)."'>Clinic</a>";
+        })->filter();
+        $grid->column('created_at', __('Created at'))->filter();
+
+
+        $grid->actions(function ($actions) {
+            $actions->disableView();
         });
-        $grid->column('created_at', __('Created at'));
 
         return $grid;
     }
@@ -86,8 +91,8 @@ class ClinicEmployeeController extends AdminController
             $form->image('image', __('Image'));
             $form->file('id_employee', __('Employee ID'));
             $form->text('position', __('Position'));
-            $form->decimal('net_salary', __('Net salary'));
-            $form->decimal('gross_salary', __('Gross salary'));
+            $form->decimal('net_salary', __('Net salary'))->default(0);
+            $form->decimal('gross_salary', __('Gross salary'))->default(0);
             $form->list('docs_checklist', __('Docs checklist'));
             $form->radio('gender', 'Gender')->options(['1' => 'Male', '2'=> 'Female'])->default('1');
 

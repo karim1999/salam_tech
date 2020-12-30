@@ -1,53 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3966a211-dab0-4cbc-8a80-892bc4c80047" name="Default Changelist" comment="attendance">
-      <change afterPath="$PROJECT_DIR$/app/Admin/Controllers/AppointmentController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Admin/Controllers/ConsultationController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Admin/Controllers/ContactMessageController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Admin/Controllers/DoctorCertificationController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Admin/Controllers/DoctorVacationController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Admin/Controllers/EmrController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Admin/Controllers/FavoriteController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Admin/Controllers/LabBrancheController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Admin/Controllers/LabController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Admin/Controllers/PharmacyBrancheController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Admin/Controllers/PharmacyController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Admin/Controllers/RateController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Admin/Controllers/SettingController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Admin/Controllers/UserFamilyController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Admin/Controllers/UserHealthController.php" afterDir="false" />
+    <list default="true" id="3966a211-dab0-4cbc-8a80-892bc4c80047" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/CityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/CityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/ClinicBrancheController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/ClinicBrancheController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/ClinicController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/ClinicController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/ClinicEmployeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/ClinicEmployeeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/ClinicProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/ClinicProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/ClinicSpecialistController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/ClinicSpecialistController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/DoctorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/DoctorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/EmployeeAttendanceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/EmployeeAttendanceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/SpecialistController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/SpecialistController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Appointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Appointment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Consultation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Consultation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/ConsultationMessage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ConsultationMessage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Doctor.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Doctor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/DoctorCertification.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/DoctorCertification.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/DoctorDocument.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/DoctorDocument.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/DoctorVacation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/DoctorVacation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Emr.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Emr.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/EmrDocument.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/EmrDocument.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/EmrMedicine.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/EmrMedicine.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Lab.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Lab.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/LabBranche.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/LabBranche.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Pharmacy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Pharmacy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/PharmacyBranche.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PharmacyBranche.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Rate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Rate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/UserAddress.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/UserAddress.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/UserFamily.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/UserFamily.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/UserHealth.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/UserHealth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/HomeController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,7 +181,8 @@
       <workItem from="1609187562360" duration="12499000" />
       <workItem from="1609206471420" duration="75000" />
       <workItem from="1609206581121" duration="2640000" />
-      <workItem from="1609209460182" duration="25556000" />
+      <workItem from="1609209460182" duration="26036000" />
+      <workItem from="1609326758125" duration="67000" />
     </task>
     <task id="LOCAL-00001" summary="fixed">
       <created>1609207171874</created>
@@ -255,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609245710906</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Finished All">
+      <created>1609290233515</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1609290233515</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,29 +233,30 @@
     <MESSAGE value="clinics module" />
     <MESSAGE value="Clinic Module" />
     <MESSAGE value="attendance" />
-    <option name="LAST_COMMIT_MESSAGE" value="attendance" />
+    <MESSAGE value="Finished All" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished All" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609289907397">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609289907397" />
-    <state x="585" y="108" key="CommitChangelistDialog2" timestamp="1609288583720">
+    <state x="585" y="108" key="CommitChangelistDialog2" timestamp="1609290232800">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="108" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1609288583720" />
+    <state x="585" y="108" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1609290232800" />
     <state x="727" y="243" key="NewPhpClassDialog" timestamp="1609243399304">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="727" y="243" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609243399304" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1609245711860">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1609290234534">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1609245711860" />
-    <state x="667" y="253" width="585" height="592" key="find.popup" timestamp="1609289786204">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1609290234534" />
+    <state x="667" y="253" width="891" height="592" key="find.popup" timestamp="1609290223936">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="667" y="253" width="585" height="592" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1609289786204" />
+    <state x="667" y="253" width="891" height="592" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1609290223936" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1609287725167">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -41,10 +41,18 @@ class AppointmentController extends AdminController
         $grid->column('user_canceled', __('User canceled'))->bool()->filter();
         $grid->column('doctor_canceled', __('Doctor canceled'))->bool()->filter();
         $grid->column('user_id', __('Patient'))->display(function ($id) {
-            return "<a href='".route('admin.patients.patients.edit', $id)."'>Patient</a>";
+            if($id){
+                return "<a href='".route('admin.patients.patients.edit', $id)."'>Patient</a>";
+            }else{
+                return "";
+            }
         })->filter();
         $grid->column('doctor_id', __('Doctor'))->display(function ($id) {
-            return "<a href='".route('admin.doctors.doctors.edit', $id)."'>Doctor</a>";
+            if($id){
+                return "<a href='".route('admin.doctors.doctors.edit', $id)."'>Doctor</a>";
+            }else{
+                return "";
+            }
         })->filter();
         $grid->column('created_at', __('Created at'))->filter();
 

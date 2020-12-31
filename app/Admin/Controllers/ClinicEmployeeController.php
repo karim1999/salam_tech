@@ -37,7 +37,11 @@ class ClinicEmployeeController extends AdminController
 //        $grid->column('docs_checklist', __('Docs checklist'))->filter();
         $grid->column('gender', __('Gender'))->using(['1' => 'female', '2' => 'male'])->filter();
         $grid->column('clinic_id', __('Clinic'))->display(function ($id) {
-            return "<a href='".route('admin.clinics.clinics.edit', $id)."'>Clinic</a>";
+            if($id){
+                return "<a href='".route('admin.clinics.clinics.edit', $id)."'>Clinic</a>";
+            }else{
+                return "";
+            }
         })->filter();
         $grid->column('created_at', __('Created at'))->filter();
 

@@ -42,15 +42,27 @@ class DoctorController extends AdminController
         $grid->column('views', __('Views'))->filter();
 
         $grid->column('clinic_id', __('Clinic'))->display(function ($id) {
-            return "<a href='".route('admin.clinics.clinics.edit', $id)."'>Clinic</a>";
+            if($id){
+                return "<a href='".route('admin.clinics.clinics.edit', $id)."'>Clinic</a>";
+            }else{
+                return "";
+            }
         })->filter();
 
-        $grid->column('clinic_branch_id', __('Clinic'))->display(function ($id) {
-            return "<a href='".route('admin.clinics.branches.edit', $id)."'>Branch</a>";
+        $grid->column('clinic_branch_id', __('Branch'))->display(function ($id) {
+            if($id){
+				return "<a href='".route('admin.clinics.branches.edit', $id)."'>Branch</a>";
+            }else{
+                return "";
+            }
         })->filter();
 
-        $grid->column('specialist_id', __('Clinic'))->display(function ($id) {
-            return "<a href='".route('admin.clinics.specialists.edit', $id)."'>Specialist</a>";
+        $grid->column('specialist_id', __('Specialist'))->display(function ($id) {
+            if($id){
+				return "<a href='".route('admin.clinics.specialists.edit', $id)."'>Specialist</a>";
+            }else{
+                return "";
+            }
         })->filter();
 
         $grid->column('profile_finish', __('Profile finish'))->bool()->filter();

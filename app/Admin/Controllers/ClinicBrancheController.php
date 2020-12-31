@@ -40,7 +40,11 @@ class ClinicBrancheController extends AdminController
         $grid->column('work_time_from', __('Work time from'))->filter();
         $grid->column('work_time_to', __('Work time to'))->filter();
         $grid->column('clinic_id', __('Clinic'))->display(function ($id) {
-            return "<a href='".route('admin.clinics.clinics.edit', $id)."'>Clinic</a>";
+            if($id){
+                return "<a href='".route('admin.clinics.clinics.edit', $id)."'>Clinic</a>";
+            }else{
+                return "";
+            }
         })->filter();
 //        $grid->column('area_id', __('Area id'));
 //        $grid->column('city_id', __('City id'));

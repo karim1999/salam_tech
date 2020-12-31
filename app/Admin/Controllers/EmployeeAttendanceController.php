@@ -34,7 +34,11 @@ class EmployeeAttendanceController extends AdminController
         $grid->column('deduction', __('Deduction'))->filter();
         $grid->column('paid_leave', __('Paid leave'))->bool()->filter();
         $grid->column('employee_id', __('Employee'))->display(function ($id) {
-            return "<a href='".route('admin.clinics.employees.employees.edit', $id)."'>Employee</a>";
+            if($id){
+                return "<a href='".route('admin.clinics.employees.employees.edit', $id)."'>Employee</a>";
+            }else{
+                return "";
+            }
         })->filter();
         $grid->column('created_at', __('Created at'))->filter();
         $grid->column('updated_at', __('Updated at'))->filter();

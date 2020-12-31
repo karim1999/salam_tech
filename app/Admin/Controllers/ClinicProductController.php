@@ -39,9 +39,11 @@ class ClinicProductController extends AdminController
         $grid->column('expire_date', __('Expire date'))->datetime()->filter();
         $grid->column('min_stock_expire_date', __('Min stock expire date'))->filter();
         $grid->column('clinic_id', __('Clinic'))->display(function ($id) {
-
-            return "<a href='".route('admin.clinics.clinics.edit', $id)."'>Clinic</a>";
-
+            if($id){
+                return "<a href='".route('admin.clinics.clinics.edit', $id)."'>Clinic</a>";
+            }else{
+                return "";
+            }
         })->filter();
         $grid->column('created_at', __('Created at'))->datetime("Y-m-d")->filter();
 //        $grid->column('updated_at', __('Updated at'));

@@ -85,10 +85,10 @@ class Clinic extends Authenticatable
         return $this->hasMany(ClinicDocument::class, 'clinic_id');
     }
 
-//    public function Branche()
-//    {
-//        return $this->hasOne(ClinicBranche::class, 'clinic_id');
-//    }
+    public function Branche()
+    {
+        return $this->hasOne(ClinicBranche::class, 'clinic_id');
+    }
 
     public function Branches()
     {

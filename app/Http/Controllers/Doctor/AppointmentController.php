@@ -27,6 +27,7 @@ class AppointmentController extends Controller
         ->whereDate('date', '<=', date('Y-m-d'))
         ->where('time', '<', date('H:i'))
         ->with([
+            "User",
             "Doctor", "Doctor.Clinic",
             "Doctor.Specialist:id,name_$lang as name,image",
             "Doctor.City:id,name_$lang as name",

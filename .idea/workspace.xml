@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3966a211-dab0-4cbc-8a80-892bc4c80047" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Clinic.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Clinic.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Doctor/AppointmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Doctor/AppointmentController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +186,10 @@
       <workItem from="1609326758125" duration="121000" />
       <workItem from="1609348990718" duration="2069000" />
       <workItem from="1609359260051" duration="1255000" />
-      <workItem from="1609427364967" duration="1897000" />
+      <workItem from="1609427364967" duration="2429000" />
+      <workItem from="1609713323970" duration="1084000" />
+      <workItem from="1609743425833" duration="89000" />
+      <workItem from="1609801412611" duration="36000" />
     </task>
     <task id="LOCAL-00001" summary="fixed">
       <created>1609207171874</created>
@@ -244,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609428078644</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="test">
+      <created>1609431530006</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1609431530006</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,29 +272,30 @@
     <MESSAGE value="dashboard" />
     <MESSAGE value="Footer" />
     <MESSAGE value="Final" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final" />
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609289907397">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609289907397" />
-    <state x="585" y="108" key="CommitChangelistDialog2" timestamp="1609428078028">
+    <state x="585" y="108" key="CommitChangelistDialog2" timestamp="1609431529488">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="108" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1609428078028" />
+    <state x="585" y="108" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1609431529488" />
     <state x="727" y="243" key="NewPhpClassDialog" timestamp="1609243399304">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="727" y="243" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609243399304" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1609428079834">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1609431531021">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1609428079834" />
-    <state x="667" y="253" width="891" height="772" key="find.popup" timestamp="1609427595049">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1609431531021" />
+    <state x="667" y="253" width="891" height="772" key="find.popup" timestamp="1609713398576">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="667" y="253" width="891" height="772" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1609427595049" />
+    <state x="667" y="253" width="891" height="772" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1609713398576" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1609287725167">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -9,6 +9,7 @@ class EmrMedicine extends Model
     protected $fillable = [
         'title',
         'body',
+        'duration',
         'emr_id',
     ];
 

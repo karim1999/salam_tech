@@ -17,6 +17,7 @@ class CreateEmrMedicinesTable extends Migration
             $table->id();
             $table->string('title')->nullable();
             $table->text('body')->nullable();
+            $table->integer('duration')->default(1);
             $table->unsignedBigInteger('emr_id')->nullable();
 
             $table->foreign('emr_id')->references('id')->on('emrs')->onDelete('cascade');

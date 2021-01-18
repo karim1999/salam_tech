@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="3966a211-dab0-4cbc-8a80-892bc4c80047" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/cors.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/cors.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/EmrController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/EmrController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Doctor/AppointmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Doctor/AppointmentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Doctor/EMRController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Doctor/EMRController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/EmrMedicine.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/EmrMedicine.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_29_165859_create_emr_medicines_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_29_165859_create_emr_medicines_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +194,15 @@
       <workItem from="1609713323970" duration="1084000" />
       <workItem from="1609743425833" duration="89000" />
       <workItem from="1609801412611" duration="278000" />
-      <workItem from="1609843482039" duration="952000" />
+      <workItem from="1609843482039" duration="1565000" />
+      <workItem from="1609863314164" duration="17000" />
+      <workItem from="1610318664360" duration="209000" />
+      <workItem from="1610361049248" duration="12000" />
+      <workItem from="1610370241064" duration="644000" />
+      <workItem from="1610731364371" duration="4600000" />
+      <workItem from="1610921521259" duration="2758000" />
+      <workItem from="1610990749343" duration="45000" />
+      <workItem from="1610992141876" duration="1225000" />
     </task>
     <task id="LOCAL-00001" summary="fixed">
       <created>1609207171874</created>
@@ -276,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609843771824</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="cors">
+      <created>1609844864758</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1609844864758</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,18 +322,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609289907397" />
-    <state x="585" y="108" key="CommitChangelistDialog2" timestamp="1609843771245">
+    <state x="585" y="108" key="CommitChangelistDialog2" timestamp="1609844864224">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="108" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1609843771245" />
+    <state x="585" y="108" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1609844864224" />
     <state x="727" y="243" key="NewPhpClassDialog" timestamp="1609243399304">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="727" y="243" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609243399304" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1609843772958">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1609844865747">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1609843772958" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1609844865747" />
     <state x="667" y="253" width="891" height="772" key="find.popup" timestamp="1609713398576">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

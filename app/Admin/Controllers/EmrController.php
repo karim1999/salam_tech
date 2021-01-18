@@ -91,6 +91,7 @@ class EmrController extends AdminController
 
             $form->hasMany('medecines', 'Medecines', function (Form\NestedForm $form) {
                 $form->text('title', __('Title'))->required();
+                $form->number('duration', __('Duration'))->default(1);
                 $form->textarea('body', __('Body'));
             });
 

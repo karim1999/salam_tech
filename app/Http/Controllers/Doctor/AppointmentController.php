@@ -89,7 +89,7 @@ class AppointmentController extends Controller
         $limit = request('limit') ?: 20;
         $data['appointments'] = Appointment::where('doctor_id', $auth)->where('type', '!=', 3)
             ->whereDate('date', request('date'))
-            ->with(["User", "Doctor.Clinic", "User:id,name,code,image", "Address", "UserFamily"])->paginate($limit);
+            ->with(["User", "Doctor.Clinic", "Address", "UserFamily"])->paginate($limit);
 
         $data['appointments']->map(function ($item) use ($lang) {
             $item->doctor->clinic->branche = $item->doctor->clinic->Branche()->where([

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3966a211-dab0-4cbc-8a80-892bc4c80047" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Clinic/AppointmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Clinic/AppointmentController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/ClinicProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ClinicProduct.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -198,7 +199,8 @@
       <workItem from="1610731364371" duration="4600000" />
       <workItem from="1610921521259" duration="2758000" />
       <workItem from="1610990749343" duration="45000" />
-      <workItem from="1610992141876" duration="3489000" />
+      <workItem from="1610992141876" duration="5607000" />
+      <workItem from="1611234243365" duration="3162000" />
     </task>
     <task id="LOCAL-00001" summary="fixed">
       <created>1609207171874</created>
@@ -298,7 +300,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610995548125</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Operations">
+      <created>1610997546908</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1610997546908</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,25 +328,26 @@
     <MESSAGE value="test" />
     <MESSAGE value="cors" />
     <MESSAGE value="Duration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Duration" />
+    <MESSAGE value="Operations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Operations" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609289907397">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609289907397" />
-    <state x="585" y="108" key="CommitChangelistDialog2" timestamp="1610995547505">
+    <state x="585" y="108" key="CommitChangelistDialog2" timestamp="1610997546230">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="108" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1610995547505" />
+    <state x="585" y="108" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1610997546229" />
     <state x="727" y="243" key="NewPhpClassDialog" timestamp="1609243399304">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="727" y="243" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609243399304" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1610995549336">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1610997547997">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1610995549336" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1610997547997" />
     <state x="667" y="253" width="891" height="772" key="find.popup" timestamp="1609713398576">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

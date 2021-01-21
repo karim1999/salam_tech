@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Storage;
 class ClinicProduct extends Model
 {
     protected $with= ["Operations"];
-    
+
     protected $fillable = [
         'name',
         'image',

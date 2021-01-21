@@ -23,8 +23,11 @@ class AppointmentController extends Controller
         }
 
         $limit = request('limit') ?: 20;
-        $data['appointments'] = Appointment::whereDate('date', '>=', date('Y-m-d'))
-            ->where('time', '>=', date('H:i'))
+        $data['appointments'] = Appointment::where(function($q){
+            $q->whereDate('date', '>', date('Y-m-d'))->orWhere(function ($query){
+                $query->whereDate('date', '=', date('Y-m-d'))->where('time', '>=', date('H:i'));
+            });
+        })
             ->where(['user_canceled' => 0, 'doctor_canceled' => 0])
             ->whereIn('doctor_id', Doctor::where('clinic_id', $auth)->pluck('id'))
             ->with(["User:id,name,phone", 'Doctor:id,name'])->paginate($limit);

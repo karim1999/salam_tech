@@ -35,7 +35,8 @@ class DoctorController extends Controller
 
         $data['branches'] = ClinicBranche::where('clinic_id', $auth)
             ->with("City:id,name_en as name", "Area:id,name_en as name")->get();
-        $data['new_doctors'] = Doctor::whereNull('clinic_id')->get(['id', 'name']);
+        $data['new_doctors'] = Doctor::whereNull('clinic_id')->get();
+//        $data['new_doctors'] = Doctor::whereNull('clinic_id')->get(['id', 'name']);
 
         return $this->successResponse($data);
     }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\Appointment;
 use App\Models\Doctor;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class AppointmentController extends Controller
@@ -44,7 +45,7 @@ class AppointmentController extends Controller
         return $this->successResponse($data);
     }
 
-    public function show()
+    public function show(Request $request)
     {
         $lang = $this->lang();
         $auth = $this->user();
@@ -60,8 +61,7 @@ class AppointmentController extends Controller
 
         $limit = request('limit') ?: 20;
         $data['past_appointments'] = Appointment::where('user_id', $auth)
-            ->whereDate('date', '<=', date('Y-m-d'))
-            ->where('time', '<', date('H:i'))
+            ->whereDate('date', '<=', $request->input('date'))
             ->with([
                 "Doctor", "Doctor.Clinic",
                 "Doctor.Specialist:id,name_$lang as name,image",
@@ -81,8 +81,8 @@ class AppointmentController extends Controller
         });
 
         $data['upcoming_appointments'] = Appointment::where('user_id', $auth)
-            ->whereDate('date', '>=', date('Y-m-d'))
-            ->where('time', '>=', date('H:i'))
+            ->whereDate('date', '>=', $request->input('date'))
+//            ->where('time', '>=', date('H:i'))
             ->with([
                 "Doctor", "Doctor.Clinic",
                 "Doctor.Specialist:id,name_$lang as name,image",

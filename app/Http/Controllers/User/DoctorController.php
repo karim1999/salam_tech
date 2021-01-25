@@ -92,7 +92,7 @@ class DoctorController extends Controller
             $item->is_liked = $item->IsLiked($auth);
             $item->slots = $item->Slots();
             foreach ($item->slots as $slot) {
-                $dateTime = $slot['date'] . ' ' . date('H:i', $slot['free_slots'][0]['from']);
+                $dateTime = $slot['date'] ;
                 $item->next_appointment = strtotime($dateTime);
                 break;
             }

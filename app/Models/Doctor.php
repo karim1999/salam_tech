@@ -96,7 +96,7 @@ class Doctor extends Authenticatable
     public function Slots()
     {
         $slots = [];
-        for ($count = 0; $count < 60; $count++) {
+        for ($count = 0; $count < 15; $count++) {
             $date = date('Y-m-d', strtotime("+$count day"));
             $data = $this->IsVacation($date);
             if ($data) $slots[] = $data;
@@ -108,7 +108,7 @@ class Doctor extends Authenticatable
     {
         $day = date('D', strtotime($date));
         $vacations = $this->Vacations()->pluck('date')->toArray();
-        if ((!in_array($day, $this->work_days)) || in_array($date, $vacations)) return null;
+//        if ((!in_array($day, $this->work_days ?? [])) || in_array($date, $vacations)) return null;
         $slots = $this->FreeSlots($date);
         return ['date' => $date, 'no_free_slots' => count($slots), 'free_slots' => $slots];
     }
@@ -122,8 +122,10 @@ class Doctor extends Authenticatable
         $slots = floor($totalMinutes / $slotDuration);
 
         $freeSlots = [];
-        $to = date('H:i', $this->work_time_to);
-        $from = date('H:i', $this->work_time_from);
+//        $to = date('H:i', $this->work_time_to);
+//        $from = date('H:i', $this->work_time_from);
+        $to = $this->work_time_to;
+        $from = $this->work_time_from;
         $slotFrom = $from;
         for ($i = 1; $i <= $slots; $i++) {
             $slotTo = date("H:i", strtotime("+$slotDuration minutes", strtotime($slotFrom)));

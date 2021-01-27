@@ -116,6 +116,7 @@ class EMRController extends Controller
             }
         }
         $data['documents'] = [];
+        $data['emr'] = $emr;
         if (request('documents')) {
             foreach (request('documents') as $item) {
                 $data['documents'][] = EmrDocument::create([
@@ -127,7 +128,7 @@ class EMRController extends Controller
             }
         }
 
-        return $this->successResponse($data, __('lang.ErmUpdated'));
+        return $this->successResponse($data, __('lang.ErmCreated'));
     }
 
     public function deleteDocument()

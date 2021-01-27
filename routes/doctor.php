@@ -37,6 +37,8 @@ Route::middleware('locale')->namespace('Doctor')->prefix('doctors')->group(funct
         Route::post('cancelAppointments', 'AppointmentController@store');
 
         Route::post('EMR', 'EMRController@index');
+
+        Route::post('createEMR', 'EMRController@create');
         Route::post('updateEMR', 'EMRController@store');
         Route::delete('deleteEMRDocument', 'EMRController@deleteDocument');
 

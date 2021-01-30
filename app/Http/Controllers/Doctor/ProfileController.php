@@ -24,13 +24,15 @@ class ProfileController extends Controller
         ])->where('id', $auth)->first();
         $data['doctor']->no_visits = $data['doctor']->views;
         $data['doctor']->no_appointments = Appointment::where('doctor_id', $auth)->count();
-        $data['doctor']->clinic['branche'] = $data['doctor']->clinic->Branche()->where([
-            'latitude' => $data['doctor']->latitude,
-            'longitude' => $data['doctor']->longitude,
-        ])->with([
-            "City:id,name_$lang as name",
-            "Area:id,name_$lang as name",
-        ])->first();
+        if($data['doctor']->clinic){
+            $data['doctor']->clinic['branche'] = $data['doctor']->clinic->Branche()->where([
+                'latitude' => $data['doctor']->latitude,
+                'longitude' => $data['doctor']->longitude,
+            ])->with([
+                "City:id,name_$lang as name",
+                "Area:id,name_$lang as name",
+            ])->first();
+        }
 
         $data['cities'] = City::select('id', "name_$lang as name")->get();
         $data['cities']->map(function ($item) use ($lang) {

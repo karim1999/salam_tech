@@ -32,11 +32,11 @@ class ProductController extends Controller
 
         return $this->successResponse($data);
     }
-    public function show(ClinicProduct $clinicProduct)
+    public function show($clinicProduct)
     {
         $auth = $this->clinic();
 
-        $data['product'] = $clinicProduct;
+        $data['product'] = ClinicProduct::findOrFail($clinicProduct);
 
         return $this->successResponse($data);
     }

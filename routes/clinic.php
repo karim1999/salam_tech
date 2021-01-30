@@ -45,7 +45,7 @@ Route::middleware('locale')->namespace('Clinic')->prefix('clinics')->group(funct
         Route::post('attendance', 'AttendanceController@store');
 
         Route::get('products', 'ProductController@index');
-        Route::get('products/{clinicProduct}', 'ProductController@show');
+        Route::get('products/{product}', 'ProductController@show');
         Route::post('products', 'ProductController@store');
         Route::post('updateProduct', 'ProductController@update');
         Route::post('deleteProduct', 'ProductController@destroy');

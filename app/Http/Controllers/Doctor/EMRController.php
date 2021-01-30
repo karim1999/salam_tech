@@ -30,7 +30,7 @@ class EMRController extends Controller
             ]);
         }
         $data['emr'] = Emr::where(['doctor_id' => $auth, 'user_id' => request('user_id')])
-            ->with(["User:id,name,code,image", "Documents", "Medecines"])->first();
+            ->with(["User", "Documents", "Medecines"])->first();
         $data['emr']->no_appointments = Appointment::where(['doctor_id' => $auth, 'user_id' => request('user_id')])->count();
 
         return $this->successResponse($data);

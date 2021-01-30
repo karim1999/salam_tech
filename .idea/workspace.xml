@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3966a211-dab0-4cbc-8a80-892bc4c80047" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Doctor/AppointmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Doctor/AppointmentController.php" afterDir="false" />
-    </list>
+    <list default="true" id="3966a211-dab0-4cbc-8a80-892bc4c80047" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -205,7 +202,7 @@
       <workItem from="1611778197427" duration="6000" />
       <workItem from="1611779825463" duration="3364000" />
       <workItem from="1612016108880" duration="2095000" />
-      <workItem from="1612040332760" duration="2757000" />
+      <workItem from="1612040332760" duration="3037000" />
     </task>
     <task id="LOCAL-00001" summary="fixed">
       <created>1609207171874</created>
@@ -368,7 +365,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612043994962</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="fixed app profile">
+      <created>1612046391767</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1612046391767</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -396,25 +400,26 @@
     <MESSAGE value="createEmr" />
     <MESSAGE value="product info" />
     <MESSAGE value="fixed doctor profile" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed doctor profile" />
+    <MESSAGE value="fixed app profile" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed app profile" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609289907397">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609289907397" />
-    <state x="585" y="108" key="CommitChangelistDialog2" timestamp="1612043994306">
+    <state x="585" y="108" key="CommitChangelistDialog2" timestamp="1612046391161">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="108" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1612043994306" />
+    <state x="585" y="108" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1612046391161" />
     <state x="727" y="243" key="NewPhpClassDialog" timestamp="1609243399304">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="727" y="243" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609243399304" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1612043995816">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1612046392502">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1612043995816" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1612046392502" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1612016473544">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3966a211-dab0-4cbc-8a80-892bc4c80047" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Doctor/EMRController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Doctor/EMRController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Clinic/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Clinic/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/clinic.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/clinic.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +204,8 @@
       <workItem from="1611597895821" duration="9219000" />
       <workItem from="1611700898030" duration="618000" />
       <workItem from="1611778197427" duration="6000" />
-      <workItem from="1611779825463" duration="920000" />
+      <workItem from="1611779825463" duration="3364000" />
+      <workItem from="1612016108880" duration="222000" />
     </task>
     <task id="LOCAL-00001" summary="fixed">
       <created>1609207171874</created>
@@ -337,7 +340,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611780547383</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="createEmr">
+      <created>1611780750036</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1611780750036</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -370,18 +380,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609289907397" />
-    <state x="585" y="108" key="CommitChangelistDialog2" timestamp="1611780546716">
+    <state x="585" y="108" key="CommitChangelistDialog2" timestamp="1611780749547">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="108" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1611780546716" />
+    <state x="585" y="108" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1611780749547" />
     <state x="727" y="243" key="NewPhpClassDialog" timestamp="1609243399304">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="727" y="243" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609243399304" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1611780548536">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1611780769433">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1611780548536" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1611780769433" />
     <state x="667" y="253" width="891" height="772" key="find.popup" timestamp="1611619338126">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -32,6 +32,14 @@ class ProductController extends Controller
 
         return $this->successResponse($data);
     }
+    public function show(ClinicProduct $clinicProduct)
+    {
+        $auth = $this->clinic();
+
+        $data['product'] = $clinicProduct;
+
+        return $this->successResponse($data);
+    }
 
     public function store()
     {

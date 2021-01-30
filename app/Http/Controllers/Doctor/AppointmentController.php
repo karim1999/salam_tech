@@ -92,13 +92,15 @@ class AppointmentController extends Controller
             ->with(["User", "Doctor.Clinic", "Address", "UserFamily"])->paginate($limit);
 
         $data['appointments']->map(function ($item) use ($lang) {
-            $item->doctor->clinic->branche = $item->doctor->clinic->Branche()->where([
-                'latitude' => $item->doctor->latitude,
-                'longitude' => $item->doctor->longitude,
-            ])->with([
-                "City:id,name_$lang as name",
-                "Area:id,name_$lang as name",
-            ])->first();
+            if($item->doctor->clinic){
+                $item->doctor->clinic->branche = $item->doctor->clinic->Branche()->where([
+                    'latitude' => $item->doctor->latitude,
+                    'longitude' => $item->doctor->longitude,
+                ])->with([
+                    "City:id,name_$lang as name",
+                    "Area:id,name_$lang as name",
+                ])->first();
+            }
         });
 
         $data['vacations'] = DoctorVacation::where('doctor_id', $auth)->pluck('date');

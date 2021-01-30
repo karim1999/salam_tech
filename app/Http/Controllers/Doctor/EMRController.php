@@ -43,7 +43,7 @@ class EMRController extends Controller
             'medecines' => 'nullable|array|min:1',
             'medecines.*.title' => 'required',
             'medecines.*.body' => 'required',
-            'medecines.*.duration' => 'required',
+//            'medecines.*.duration' => 'required',
             'documents' => 'nullable|array|min:1',
             'emr_id' => 'required|int|exists:emrs,id',
         ];
@@ -86,7 +86,7 @@ class EMRController extends Controller
             'medecines' => 'nullable|array|min:1',
             'medecines.*.title' => 'required',
             'medecines.*.body' => 'required',
-            'medecines.*.duration' => 'required',
+//            'medecines.*.duration' => 'required',
             'documents' => 'nullable|array|min:1',
             'user_id' => 'required|int|exists:users,id',
         ];

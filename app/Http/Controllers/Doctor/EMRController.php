@@ -60,7 +60,7 @@ class EMRController extends Controller
             foreach (request('medecines') as $item) {
                 $emr->Medecines()->create([
                     'title' => $item['title'],
-                    'duration' => $item['duration'],
+                    'duration' => array_key_exists('duration', $item) ? $item['duration'] : 1,
                     'body' => $item['body']
                 ]);
             }
@@ -110,7 +110,7 @@ class EMRController extends Controller
             foreach (request('medecines') as $item) {
                 $emr->Medecines()->create([
                     'title' => $item['title'],
-                    'duration' => $item['duration'],
+                    'duration' => array_key_exists('duration', $item) ? $item['duration'] : 1,
                     'body' => $item['body']
                 ]);
             }

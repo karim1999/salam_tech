@@ -122,7 +122,8 @@ class DoctorController extends Controller
         $data['doctor']->is_liked = $data['doctor']->IsLiked($auth);
         $data['doctor']->slots = $data['doctor']->Slots();
         foreach ($data['doctor']->slots as $slot) {
-            $dateTime = $slot['date'] . ' ' . date('H:i', $slot['free_slots'][0]['from']);
+            $freeSlot = $slot['free_slots'][0] ? ' ' . date('H:i', $slot['free_slots'][0]['from']) : "";
+            $dateTime = $slot['date'] . $freeSlot;
             $data['doctor']->next_appointment = strtotime($dateTime);
             break;
         }

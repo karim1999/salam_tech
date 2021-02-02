@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Doctor;
 
 use App\Http\Controllers\Controller;
 use App\Models\Appointment;
+use App\Models\Doctor;
 use App\Models\Emr;
 use App\Models\EmrDocument;
+use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 
 class EMRController extends Controller
@@ -145,4 +147,5 @@ class EMRController extends Controller
         EmrDocument::find(request('document_id'))->delete();
         return $this->successResponse([], __('lang.DocumentDeleted'));
     }
+
 }

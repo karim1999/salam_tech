@@ -32,6 +32,7 @@ class ClinicController extends AdminController
         $grid->column('id', __('Id'))->filter();
         $grid->column('image', __('Image'))->image();
         $grid->column('name', __('Name'))->filter();
+        $grid->column('type', __('Type'))->using(['1' => 'Clinic', '2' => 'Hospital'])->filter();
         $grid->column('email', __('Email'))->filter();
         $grid->column('phone', __('Phone'))->filter();
         $grid->column('address', __('Address'))->filter();
@@ -112,6 +113,7 @@ class ClinicController extends AdminController
                 ->updateRules('sometimes|nullable|min:6|confirmed');
             $form->password('password_confirmation', __('Password Conformation'))->creationRules('required|min:6')->updateRules('sometimes|nullable|min:6');
             $form->url('website_url', __('Website url'));
+            $form->radio('type', 'Type')->options(['1' => 'Clinic', '2'=> 'Hospital'])->default('1');
 
         })->tab('Address', function ($form) {
 

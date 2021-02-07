@@ -95,4 +95,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(UserFamily::class, 'user_id');
     }
+
+    public function emrs()
+    {
+        return $this->hasMany(Emr::class, 'user_id');
+    }
 }

@@ -13,6 +13,9 @@ class SetProfileController extends Controller
     {
         $auth = $this->user();
         $rules = [
+            'name' => 'required',
+            'email' => 'required|unique:users,email,' . $auth,
+            'phone' => 'required|unique:users,phone,' . $auth,
             'birth_date' => 'required|date|date_format:Y-m-d|before:now',
             'gender' => 'required|in:1,2',
             'floor_no' => 'nullable|int',
@@ -20,10 +23,16 @@ class SetProfileController extends Controller
             'address' => 'required',
             'longitude' => 'required',
             'latitude' => 'required',
-            'insurance_card' => 'required',
-            'identification_card' => 'required',
+            'image' => 'nullable|image',
+            'insurance_card' => 'nullable',
+            'identification_card' => 'nullable',
             'area_id' => 'required|int|exists:areas,id',
             'city_id' => 'required|int|exists:cities,id',
+            'family' => 'nullable|array',
+            'family.*.name' => 'required',
+            'family.*.title' => 'required',
+            'family.*.relation' => 'required',
+            'family.*.image' => 'required|image',
             'height' => 'required|int',
             'weight' => 'required|int',
             'blood_pressure' => 'required',
@@ -31,16 +40,12 @@ class SetProfileController extends Controller
             'blood_type' => 'required',
             'muscle_mass' => 'required',
             'metabolism' => 'required',
-            'genetic_history' => 'array',
-            'illness_history' => 'array',
-            'allergies' => 'array',
-            'operations' => 'array',
-            'prescription' => 'array',
-            'family' => 'nullable|array',
-            'family.*.name' => 'required',
-            'family.*.title' => 'required',
-            'family.*.relation' => 'required',
-            'family.*.image' => 'required|image',
+            'genetic_history' => 'required|array|min:1',
+            'illness_history' => 'required|array|min:1',
+            'allergies' => 'required|array|min:1',
+            'operations' => 'required|array|min:1',
+            'prescription' => 'required|array|min:1',
+
         ];
 
         $validator = Validator::make(request()->all(), $rules);
@@ -48,19 +53,24 @@ class SetProfileController extends Controller
             return $this->errorResponse(__('lang.InvalidData'), $validator->errors());
         }
 
-        $inputs = request()->all();
-        $inputs['profile_finish'] = 1;
-        if($request->file('insurance_card'))
-            $inputs['insurance_card'] = $this->uploadFile(request('insurance_card'), 'users');
-        if($request->file('identification_card'))
-            $inputs['identification_card'] = $this->uploadFile(request('identification_card'), 'users');
-        if($request->file('image'))
-            $inputs['image'] = $this->uploadFile(request('image'), 'users');
-
         $user = User::find($auth);
+        $inputs = request()->all();
+        $inputs['code'] = strtoupper(substr(request('name'), 0, 2)) . $auth;
+        if (request('insurance_card')) {
+            $this->deleteFile($user->insurance_card);
+            $inputs['insurance_card'] = $this->uploadFile(request('insurance_card'), 'users');
+        }
+        if (request('identification_card')) {
+            $this->deleteFile($user->identification_card);
+            $inputs['identification_card'] = $this->uploadFile(request('identification_card'), 'users');
+        }
+        if (request('image')) {
+            $this->deleteFile($user->image);
+            $inputs['image'] = $this->uploadFile(request('image'), 'users');
+        }
         $user->update($inputs);
         $user->Addresses()->create(request()->all());
-        $user->Health()->create(request()->all());
+        $user->Health()->update(request()->all());
         if (request('family')) {
             foreach (request('family') as $item) {
                 $user->Families()->create([
@@ -71,9 +81,8 @@ class SetProfileController extends Controller
                 ]);
             }
         }
-        $data['user'] = User::find($auth);
 
-        return $this->successResponse($data, __('lang.ProfileFinished'));
+        return $this->successResponse([], __('lang.InfoUpdated'));
     }
 
     public function setProfile()

@@ -45,6 +45,7 @@ Route::middleware('locale')->namespace('User')->prefix('users')->group(function 
         Route::get('general', 'GeneralController@index');
 
         Route::post('setProfile', 'SetProfileController@setProfile');
+        Route::post('updateProfile', 'SetProfileController@updateProfile');
         Route::post('addAddress', 'SetProfileController@addAddress');
 
         Route::get('profile', 'ProfileController@index');

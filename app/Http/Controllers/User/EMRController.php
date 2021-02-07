@@ -13,7 +13,7 @@ class EMRController extends Controller
     public function all()
     {
         $lang = $this->lang();
-        $auth = $this->user();
+        $auth = $this->user;
         return $auth->emrs;
     }
 

@@ -31,7 +31,7 @@ class ClinicController extends Controller
         }
 
         $type = request('type') ?: 1;
-        $limit = request('limit') ?: 20;
+        $limit = request('limit') ?: 100;
         $data['clinics'] = Clinic::where(['status' => 1, 'type' => $type])->wherehas('Doctors')
             ->withAndWhereHas('Branche', function ($quer) use ($lang) {
                 $quer->when(request('city_id'), function ($query) {

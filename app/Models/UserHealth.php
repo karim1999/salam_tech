@@ -32,23 +32,23 @@ class UserHealth extends Authenticatable
 
     public function getGeneticHistoryAttribute($value)
     {
-        return $value ?? [];
+        return $value ? json_decode($value) : [];
     }
     public function getIllnessHistoryAttribute($value)
     {
-        return $value ?? [];
+        return $value ? json_decode($value) : [];
     }
     public function getAllergiesAttribute($value)
     {
-        return $value ?? [];
+        return $value ? json_decode($value) : [];
     }
     public function getPrescriptionAttribute($value)
     {
-        return $value ?? [];
+        return $value ? json_decode($value) : [];
     }
     public function getOperationsAttribute($value)
     {
-        return $value ?? [];
+        return $value ? json_decode($value) : [];
     }
 
     public function setPasswordAttribute($value)

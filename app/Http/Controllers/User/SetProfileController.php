@@ -4,11 +4,12 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class SetProfileController extends Controller
 {
-    public function setProfile()
+    public function setProfile(Request $request)
     {
         $auth = $this->user();
         $rules = [
@@ -49,11 +50,11 @@ class SetProfileController extends Controller
 
         $inputs = request()->all();
         $inputs['profile_finish'] = 1;
-        if(request('insurance_card'))
+        if($request->file('insurance_card'))
             $inputs['insurance_card'] = $this->uploadFile(request('insurance_card'), 'users');
-        if(request('identification_card'))
+        if($request->file('identification_card'))
             $inputs['identification_card'] = $this->uploadFile(request('identification_card'), 'users');
-        if(request('image'))
+        if($request->file('image'))
             $inputs['image'] = $this->uploadFile(request('image'), 'users');
 
         $user = User::find($auth);

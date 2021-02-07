@@ -13,9 +13,6 @@ class SetProfileController extends Controller
     {
         $auth = $this->user();
         $rules = [
-            'name' => 'required',
-            'email' => 'required|unique:users,email,' . $auth,
-            'phone' => 'required|unique:users,phone,' . $auth,
             'birth_date' => 'required|date|date_format:Y-m-d|before:now',
             'gender' => 'required|in:1,2',
             'floor_no' => 'nullable|int',

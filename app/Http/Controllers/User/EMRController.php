@@ -7,10 +7,17 @@ use App\Models\Appointment;
 use App\Models\Doctor;
 use App\Models\Emr;
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class EMRController extends Controller
 {
+    public function single($id)
+    {
+        $lang = $this->lang();
+        return Emr::findOrFail($id);
+    }
+
     public function all()
     {
         $lang = $this->lang();

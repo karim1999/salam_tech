@@ -72,6 +72,7 @@ Route::middleware('locale')->namespace('User')->prefix('users')->group(function 
 
         Route::get('EMR', 'EMRController@index');
         Route::get('emrs', 'EMRController@all');
+        Route::get('emrs/{id}', 'EMRController@single');
         Route::post('EMRDetails', 'EMRController@show');
     });
 });

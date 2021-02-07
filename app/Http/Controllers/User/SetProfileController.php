@@ -19,7 +19,6 @@ class SetProfileController extends Controller
             'address' => 'required',
             'longitude' => 'required',
             'latitude' => 'required',
-            'image' => 'required|image',
             'insurance_card' => 'required',
             'identification_card' => 'required',
             'area_id' => 'required|int|exists:areas,id',
@@ -52,7 +51,9 @@ class SetProfileController extends Controller
         $inputs['profile_finish'] = 1;
         $inputs['insurance_card'] = $this->uploadFile(request('insurance_card'), 'users');
         $inputs['identification_card'] = $this->uploadFile(request('identification_card'), 'users');
-        $inputs['image'] = $this->uploadFile(request('image'), 'users');
+        if(request('image'))
+            $inputs['image'] = $this->uploadFile(request('image'), 'users');
+
         $user = User::find($auth);
         $user->update($inputs);
         $user->Addresses()->create(request()->all());

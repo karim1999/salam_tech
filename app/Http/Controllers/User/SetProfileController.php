@@ -67,7 +67,20 @@ class SetProfileController extends Controller
         }
         $user->update($inputs);
         $user->Addresses()->create(request()->all());
-        $user->Health()->update(request()->all());
+        $user->Health()->update(request()->all([
+            "height",
+            "weight",
+            'blood_pressure',
+            'sugar_level',
+            'blood_type',
+            'muscle_mass',
+            'metabolism',
+            'genetic_history',
+            'illness_history',
+            'allergies',
+            'operations',
+            'prescription',
+        ]));
         if (request('family')) {
             foreach (request('family') as $item) {
                 $user->Families()->create([

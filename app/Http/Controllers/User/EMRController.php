@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Appointment;
 use App\Models\Doctor;
 use App\Models\Emr;
+use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 
 class EMRController extends Controller
@@ -13,8 +14,8 @@ class EMRController extends Controller
     public function all()
     {
         $lang = $this->lang();
-        $auth = $this->user;
-        return $auth->emrs;
+        $auth = $this->user();
+        return User::findOrFail($auth)->emrs;
     }
 
     public function index()

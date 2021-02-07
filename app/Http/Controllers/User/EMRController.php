@@ -10,6 +10,13 @@ use Illuminate\Support\Facades\Validator;
 
 class EMRController extends Controller
 {
+    public function all()
+    {
+        $lang = $this->lang();
+        $auth = $this->user();
+        return $auth->emrs;
+    }
+
     public function index()
     {
         $lang = $this->lang();

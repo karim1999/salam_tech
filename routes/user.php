@@ -71,6 +71,7 @@ Route::middleware('locale')->namespace('User')->prefix('users')->group(function 
         Route::post('rate', 'RateController@store');
 
         Route::get('EMR', 'EMRController@index');
+        Route::get('emrs', 'EMRController@all');
         Route::post('EMRDetails', 'EMRController@show');
     });
 });

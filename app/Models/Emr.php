@@ -19,6 +19,8 @@ class Emr extends Model
         'updated_at' => 'datetime:Y-m-d',
     ];
 
+    protected $with= ["User", "Doctor", "Documents", "Medecines"];
+
     public function User()
     {
         return $this->belongsTo(User::class, 'user_id');

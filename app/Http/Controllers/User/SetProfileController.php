@@ -49,8 +49,10 @@ class SetProfileController extends Controller
 
         $inputs = request()->all();
         $inputs['profile_finish'] = 1;
-        $inputs['insurance_card'] = $this->uploadFile(request('insurance_card'), 'users');
-        $inputs['identification_card'] = $this->uploadFile(request('identification_card'), 'users');
+        if(request('insurance_card'))
+            $inputs['insurance_card'] = $this->uploadFile(request('insurance_card'), 'users');
+        if(request('identification_card'))
+            $inputs['identification_card'] = $this->uploadFile(request('identification_card'), 'users');
         if(request('image'))
             $inputs['image'] = $this->uploadFile(request('image'), 'users');
 

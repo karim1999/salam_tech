@@ -96,8 +96,9 @@ class Doctor extends Authenticatable
     public function Slots()
     {
         $slots = [];
-        for ($count = 0; $count < 15; $count++) {
-            $date = date('Y-m-d', strtotime("+$count day"));
+        for ($count = 1; $count < 16; $count++) {
+            $date = Carbon::today()->addDays($count);
+//            $date = date('Y-m-d', strtotime("+$count day"));
             $data = $this->IsVacation($date);
             if ($data) $slots[] = $data;
         }
@@ -106,17 +107,32 @@ class Doctor extends Authenticatable
 
     public function IsVacation($date)
     {
-        $day = date('D', strtotime($date));
+        $day = $date->toDateString();
+        $englishDayOfWeek = $date->englishDayOfWeek;
+        $shortEnglishDayOfWeek = $date->shortEnglishDayOfWeek;
         $vacations = $this->Vacations()->pluck('date')->toArray();
-//        if ((!in_array($day, $this->work_days ?? [])) || in_array($date, $vacations)) return null;
+        if (in_array($day, $vacations))
+            return null;
+
+        if(!is_array($this->work_days))
+            return null;
+
+        if ((!in_array($englishDayOfWeek, $this->work_days) && !in_array($shortEnglishDayOfWeek, $this->work_days)))
+            return null;
+
         $slots = $this->FreeSlots($date);
-        return ['date' => $date, 'no_free_slots' => count($slots), 'free_slots' => $slots];
+        return ['date' => $date->toDateString(), 'no_free_slots' => count($slots), 'free_slots' => $slots];
     }
 
     public function FreeSlots($date)
     {
-        $to = Carbon::parse($this->work_time_to);
-        $from = Carbon::parse($this->work_time_from);
+        $from= Carbon::parse("01:00:00");
+        $to= Carbon::parse("23:00:00");
+        if($this->work_time_to)
+            $to = Carbon::parse($this->work_time_to);
+        if($this->work_time_from)
+            $from = Carbon::parse($this->work_time_from);
+
         $slotDuration = 60 / $this->patient_hour; // in minutes
         $totalMinutes = $to->diffInRealMinutes($from); // in minutes
         $slots = floor($totalMinutes / $slotDuration);
@@ -124,28 +140,28 @@ class Doctor extends Authenticatable
         $freeSlots = [];
 //        $to = date('H:i', $this->work_time_to);
 //        $from = date('H:i', $this->work_time_from);
-        $to = $this->work_time_to;
-        $from = $this->work_time_from;
+//        $to = $this->work_time_to;
+//        $from = $this->work_time_from;
         $slotFrom = $from;
         for ($i = 1; $i <= $slots; $i++) {
-            $slotTo = date("H:i", strtotime("+$slotDuration minutes", strtotime($slotFrom)));
-            $free = $this->IsFree($date, $slotFrom);
+            $slotTo = $slotFrom->addMinutes($slotDuration);
+//            $slotTo = date("H:i", strtotime("+$slotDuration minutes", strtotime($slotFrom)));
+            $free = $this->IsFree($date, $slotFrom, $slotTo);
 
             if ($free && $slotTo <= $to)
-                $freeSlots[] = ['from' => strtotime($slotFrom), 'to' => strtotime($slotTo)];
+                $freeSlots[] = ['from' => $slotFrom->timestamp, 'to' => $slotTo->timestamp];
             $slotFrom = $slotTo;
         }
         return $freeSlots;
     }
 
-    public function IsFree($date, $time)
+    public function IsFree($date, $time, $to)
     {
         $appointment = Appointment::whereDate('date', $date)->where([
-            'time' => $time,
             'doctor_id' => $this->id,
             'user_canceled' => 0,
             'doctor_canceled' => 0,
-        ])->first();
+        ])->whereTime('time', '>=', $time)->whereTime('time', '<', $to)->first();
 
         return $appointment ? false : true;
     }

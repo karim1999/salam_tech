@@ -21,6 +21,7 @@ Route::middleware('locale')->namespace('User')->prefix('users')->group(function 
     Route::post('resetPassword', 'AuthController@resetPassword');
 
     Route::get('terms', 'GeneralController@terms');
+    Route::get('policy', 'GeneralController@policy');
     Route::get('cities', 'GeneralController@cities');
 
     Route::post('labs', 'LabController@index');

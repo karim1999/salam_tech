@@ -48,7 +48,7 @@ class GeneralController extends Controller
     public function help()
     {
         $lang = $this->lang();
-        $data['policy'] = Setting::first()["user_policy_$lang"];
+        $data['policy'] = Setting::first()["user_help_$lang"];
         return $this->successResponse($data);
     }
 }

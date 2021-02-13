@@ -22,6 +22,8 @@ Route::middleware('locale')->namespace('User')->prefix('users')->group(function 
 
     Route::get('terms', 'GeneralController@terms');
     Route::get('policy', 'GeneralController@policy');
+    Route::get('help', 'GeneralController@help');
+
     Route::get('cities', 'GeneralController@cities');
 
     Route::post('labs', 'LabController@index');

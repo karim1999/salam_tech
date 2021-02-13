@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="3966a211-dab0-4cbc-8a80-892bc4c80047" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/AppointmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/AppointmentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/DoctorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/DoctorController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/GeneralController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/GeneralController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_01_185913_create_settings_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_01_185913_create_settings_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/user.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -217,7 +220,7 @@
       <workItem from="1612988198667" duration="9000" />
       <workItem from="1613045969170" duration="738000" />
       <workItem from="1613227585247" duration="1231000" />
-      <workItem from="1613256431582" duration="757000" />
+      <workItem from="1613256431582" duration="2778000" />
     </task>
     <task id="LOCAL-00001" summary="fixed">
       <created>1609207171874</created>
@@ -548,7 +551,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613228064263</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="policy added">
+      <created>1613257323178</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1613257323178</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -558,7 +568,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="appointmetns fixed" />
     <MESSAGE value="doctors" />
     <MESSAGE value="user module" />
     <MESSAGE value="createEmr" />
@@ -583,17 +592,18 @@
     <MESSAGE value="latest slots" />
     <MESSAGE value="messages" />
     <MESSAGE value="messages order" />
-    <option name="LAST_COMMIT_MESSAGE" value="messages order" />
+    <MESSAGE value="policy added" />
+    <option name="LAST_COMMIT_MESSAGE" value="policy added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1612734643170">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1612734643170" />
-    <state x="585" y="108" key="CommitChangelistDialog2" timestamp="1613228063732">
+    <state x="585" y="108" key="CommitChangelistDialog2" timestamp="1613257322553">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="108" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1613228063732" />
+    <state x="585" y="108" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1613257322553" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1612277330319">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -602,18 +612,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="727" y="243" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609243399304" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1613228065340">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1613257323940">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1613228065340" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1613257323940" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1612016473544">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1612016473544" />
-    <state x="667" y="253" width="891" height="772" key="find.popup" timestamp="1611619338126">
+    <state x="667" y="253" width="891" height="772" key="find.popup" timestamp="1613257859471">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="667" y="253" width="891" height="772" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1611619338126" />
+    <state x="667" y="253" width="891" height="772" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613257859471" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1609287725167">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

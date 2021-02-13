@@ -39,7 +39,7 @@ class DoctorController extends Controller
             return $this->errorResponse(__('lang.InvalidData'), $validator->errors());
         }
 
-        $limit = request('limit') ?: 20;
+        $limit = request('limit') ?: 100;
         $distance = request('distance') ?: Setting::first()->doctor_distance;
         $data['doctors'] = Doctor::with("Specialist:id,name_$lang as name,image")
             ->where('status', 1)

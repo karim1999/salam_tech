@@ -59,7 +59,7 @@ class ConsultationController extends Controller
         $data['user'] = $consultation->User()->select('id', 'name', 'image', 'code', 'phone', 'email')->first();
         $data['user']->no_appointments = Appointment::where(['doctor_id' => $auth, 'user_id' => request('user_id')])->count();
 
-        $data['messsages'] = ConsultationMessage::where('consultation_id', $consultation->id)->latest()->paginate($limit);
+        $data['messsages'] = ConsultationMessage::where('consultation_id', $consultation->id)->paginate($limit);
         $data['messsages']->map(function ($item) {
             if ($item->sender == 2) $item->update(['seen' => 1]);
         });

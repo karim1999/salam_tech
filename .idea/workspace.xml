@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3966a211-dab0-4cbc-8a80-892bc4c80047" name="Default Changelist" comment="" />
+    <list default="true" id="3966a211-dab0-4cbc-8a80-892bc4c80047" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Doctor/ConsultationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Doctor/ConsultationController.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -207,7 +210,12 @@
       <workItem from="1612224253035" duration="4280000" />
       <workItem from="1612310038064" duration="2433000" />
       <workItem from="1612528932763" duration="27000" />
-      <workItem from="1612534438824" duration="15351000" />
+      <workItem from="1612534438824" duration="18946000" />
+      <workItem from="1612857843680" duration="7000" />
+      <workItem from="1612883524900" duration="1888000" />
+      <workItem from="1612988198667" duration="9000" />
+      <workItem from="1613045969170" duration="738000" />
+      <workItem from="1613227585247" duration="299000" />
     </task>
     <task id="LOCAL-00001" summary="fixed">
       <created>1609207171874</created>
@@ -517,7 +525,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612744160195</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="latest slots">
+      <created>1612744750306</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1612744750306</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -527,7 +542,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="cors" />
     <MESSAGE value="Duration" />
     <MESSAGE value="Operations" />
     <MESSAGE value="appointmetns fixed" />
@@ -552,17 +566,18 @@
     <MESSAGE value="update profile2" />
     <MESSAGE value="health" />
     <MESSAGE value="slots" />
-    <option name="LAST_COMMIT_MESSAGE" value="slots" />
+    <MESSAGE value="latest slots" />
+    <option name="LAST_COMMIT_MESSAGE" value="latest slots" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1612734643170">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1612734643170" />
-    <state x="585" y="108" key="CommitChangelistDialog2" timestamp="1612744159686">
+    <state x="585" y="108" key="CommitChangelistDialog2" timestamp="1612744749794">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="108" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1612744159686" />
+    <state x="585" y="108" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1612744749794" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1612277330319">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -571,10 +586,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="727" y="243" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609243399304" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1612744161135">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1612744751079">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1612744161135" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1612744751079" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1612016473544">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

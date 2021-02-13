@@ -61,7 +61,7 @@ class ConsultationController extends Controller
         $data['doctor'] = Doctor::select('id', 'name', 'image', 'seniority_level', 'phone', 'email', 'specialist_id')
             ->with("Specialist:id,name_$lang as name,image")->where('id', $consultation->doctor_id)->first();
 
-        $data['messsages'] = ConsultationMessage::where('consultation_id', request('consultation_id'))->latest()->paginate($limit);
+        $data['messsages'] = ConsultationMessage::where('consultation_id', request('consultation_id'))->paginate($limit);
         $data['messsages']->map(function ($item) {
             if ($item->sender == 1) $item->update(['seen' => 1]);
         });

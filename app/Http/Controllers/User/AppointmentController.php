@@ -94,13 +94,15 @@ class AppointmentController extends Controller
             ])->paginate($limit);
 
         $data['upcoming_appointments']->map(function ($item) use ($lang) {
-            $item->doctor->clinic->branche = $item->doctor->clinic->Branche()->where([
-                'latitude' => $item->doctor->latitude,
-                'longitude' => $item->doctor->longitude,
-            ])->with([
-                "City:id,name_$lang as name",
-                "Area:id,name_$lang as name",
-            ])->first();
+            if($item->doctor->clinic){
+                $item->doctor->clinic->branche = $item->doctor->clinic->Branche()->where([
+                    'latitude' => $item->doctor->latitude,
+                    'longitude' => $item->doctor->longitude,
+                ])->with([
+                    "City:id,name_$lang as name",
+                    "Area:id,name_$lang as name",
+                ])->first();
+            }
         });
 
         return $this->successResponse($data);

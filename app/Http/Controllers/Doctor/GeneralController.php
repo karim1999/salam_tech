@@ -46,4 +46,18 @@ class GeneralController extends Controller
         $data['terms'] = Setting::first()["doctor_terms_$lang"];
         return $this->successResponse($data);
     }
+
+    public function policy()
+    {
+        $lang = $this->lang();
+        $data['policy'] = Setting::first()["doctor_policy_$lang"];
+        return $this->successResponse($data);
+    }
+
+    public function help()
+    {
+        $lang = $this->lang();
+        $data['help'] = Setting::first()["doctor_help_$lang"];
+        return $this->successResponse($data);
+    }
 }

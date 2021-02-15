@@ -31,6 +31,8 @@ class CreateSettingsTable extends Migration
             $table->longText('user_policy_en')->nullable();
             $table->longText('user_help_ar')->nullable();
             $table->longText('user_help_en')->nullable();
+            $table->longText('doctor_help_ar')->nullable();
+            $table->longText('doctor_help_en')->nullable();
             $table->longText('doctor_policy_ar')->nullable();
             $table->longText('doctor_policy_en')->nullable();
             $table->longText('clinic_policy_ar')->nullable();

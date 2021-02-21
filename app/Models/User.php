@@ -2,11 +2,14 @@
 
 namespace App\Models;
 
+use App\Notifications\ResetPasswordNotification;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Storage;
 
 class User extends Authenticatable
 {
+    use Notifiable;
     protected $fillable = [
         'name',
         'code',
@@ -99,5 +102,9 @@ class User extends Authenticatable
     public function emrs()
     {
         return $this->hasMany(Emr::class, 'user_id');
+    }
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new ResetPasswordNotification($token, "https://salam-tech.com/reset-pw"));
     }
 }

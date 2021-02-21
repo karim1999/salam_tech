@@ -17,8 +17,10 @@ Route::middleware('locale')->namespace('User')->prefix('users')->group(function 
     Route::post('login', 'AuthController@login');
     Route::post('sendVerifyCode', 'AuthController@sendVerifyCode');
     Route::post('register', 'AuthController@register');
-    Route::post('forgetPassword', 'AuthController@forgetPassword');
-    Route::post('resetPassword', 'AuthController@resetPassword');
+//    Route::post('forgetPassword', 'AuthController@forgetPassword');
+//    Route::post('resetPassword', 'AuthController@resetPassword');
+    Route::post('forgetPassword', 'ForgotPasswordController@forgot');
+    Route::post('resetPassword', 'ForgotPasswordController@reset');
 
     Route::get('terms', 'GeneralController@terms');
     Route::get('policy', 'GeneralController@policy');

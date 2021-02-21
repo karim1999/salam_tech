@@ -118,6 +118,12 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
+        'doctors' => [
+            'provider' => 'doctors',
+            'table' => 'doctors_password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
     ],
 
     /*

@@ -2,12 +2,16 @@
 
 namespace App\Models;
 
+use App\Notifications\ResetPasswordNotification;
 use Carbon\Carbon;
+use Carbon\CarbonImmutable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Storage;
 
 class Doctor extends Authenticatable
 {
+    use Notifiable;
     protected $fillable = [
         'name',
         'email',
@@ -126,12 +130,12 @@ class Doctor extends Authenticatable
 
     public function FreeSlots($date)
     {
-        $from= Carbon::parse("01:00:00");
-        $to= Carbon::parse("23:00:00");
+        $from= CarbonImmutable::parse("01:00:00");
+        $to= CarbonImmutable::parse("23:00:00");
         if($this->work_time_to)
-            $to = Carbon::parse($this->work_time_to);
+            $to = CarbonImmutable::parse($this->work_time_to);
         if($this->work_time_from)
-            $from = Carbon::parse($this->work_time_from);
+            $from = CarbonImmutable::parse($this->work_time_from);
 
         $slotDuration = 60 / $this->patient_hour; // in minutes
         $totalMinutes = $to->diffInRealMinutes($from); // in minutes
@@ -142,14 +146,14 @@ class Doctor extends Authenticatable
 //        $from = date('H:i', $this->work_time_from);
 //        $to = $this->work_time_to;
 //        $from = $this->work_time_from;
-        $slotFrom = $from;
+        $slotFrom = $from->setSeconds(0);
         for ($i = 1; $i <= $slots; $i++) {
             $slotTo = $slotFrom->addMinutes($slotDuration);
 //            $slotTo = date("H:i", strtotime("+$slotDuration minutes", strtotime($slotFrom)));
             $free = $this->IsFree($date, $slotFrom, $slotTo);
 
             if ($free && $slotTo <= $to)
-                $freeSlots[] = ['from' => $slotFrom->timestamp, 'to' => $slotTo->timestamp];
+                $freeSlots[] = ['from' => $slotFrom->toDateTimeString(), 'to' => $slotTo->toDateTimeString()];
             $slotFrom = $slotTo;
         }
         return $freeSlots;
@@ -204,5 +208,10 @@ class Doctor extends Authenticatable
     public function Appointments()
     {
         return $this->hasMany(Appointment::class, 'doctor_id');
+    }
+
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new ResetPasswordNotification($token, "https://doctor.salam-tech.com/auth/reset-pw"));
     }
 }

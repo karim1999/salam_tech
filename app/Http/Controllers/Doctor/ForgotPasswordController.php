@@ -32,6 +32,7 @@ class ForgotPasswordController extends Controller
     public function reset() {
         config(['auth.defaults.passwords' => $this->guard]);
         $rules = [
+            'email' => 'required|email',
             'token' => 'required|string',
             'password' => 'required|string|confirmed'
         ];

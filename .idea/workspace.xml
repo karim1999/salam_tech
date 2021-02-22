@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3966a211-dab0-4cbc-8a80-892bc4c80047" name="Default Changelist" comment="">
+    <list default="true" id="3966a211-dab0-4cbc-8a80-892bc4c80047" name="Default Changelist" comment="Doctor Module&#10;1- Forget Password&#10;2- Chat not Dynamic&#10;3- Verification code 'integration with SMS'&#10;&#10;&#10;&#10;Patient Module&#10;1-chat not dynamic&#10;2- forget password&#10;3- doctor-list- Map icon not clickable&#10;4- Slot in doctor details not dynamic&#10;5- Home visit screens not implemented&#10;6- Online consultation not implement 'another service not chat refer to PDF file'">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Doctor/GeneralController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Doctor/GeneralController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_01_185913_create_settings_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_01_185913_create_settings_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/doctor.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/doctor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Doctor/ForgotPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Doctor/ForgotPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Doctor.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Doctor.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +14,13 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="blade" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -147,7 +153,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../ICIGAI/insurance" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers/User" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -158,13 +164,15 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\projects\web\mr_anis\salamtech\api\resources\views\vendor\admin\partials" />
-      <recent name="C:\projects\web\mr_anis\salamtech\api\resources\views\vendor\laravel-admin" />
-      <recent name="C:\projects\web\mr_anis\salamtech\api\app\Admin\Controllers" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\projects\web\mr_anis\salamtech\api\app\Models" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\projects\web\mr_anis\salamtech\api\app\Http\Controllers\User" />
+      <recent name="C:\projects\web\mr_anis\salamtech\api\resources\views\auth\emails" />
+      <recent name="C:\projects\web\mr_anis\salamtech\api\database\migrations" />
+      <recent name="C:\projects\web\mr_anis\salamtech\api\resources\views\vendor\admin\partials" />
+      <recent name="C:\projects\web\mr_anis\salamtech\api\resources\views\vendor\laravel-admin" />
     </key>
   </component>
   <component name="RunManager">
@@ -219,21 +227,14 @@
       <workItem from="1613045969170" duration="738000" />
       <workItem from="1613227585247" duration="1231000" />
       <workItem from="1613256431582" duration="4196000" />
-      <workItem from="1613420085136" duration="586000" />
-    </task>
-    <task id="LOCAL-00004" summary="attendance">
-      <created>1609245710906</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1609245710906</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Finished All">
-      <created>1609290233515</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1609290233515</updated>
+      <workItem from="1613420085136" duration="1204000" />
+      <workItem from="1613507303682" duration="1708000" />
+      <workItem from="1613572203960" duration="5000" />
+      <workItem from="1613767047343" duration="1800000" />
+      <workItem from="1613816425101" duration="1202000" />
+      <workItem from="1613828081718" duration="25532000" />
+      <workItem from="1614000454021" duration="4000" />
+      <workItem from="1614009188058" duration="2801000" />
     </task>
     <task id="LOCAL-00006" summary="dashboard">
       <created>1609326857534</created>
@@ -564,7 +565,21 @@
       <option name="project" value="LOCAL" />
       <updated>1613261361460</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="doctor help &amp; terms">
+      <created>1613420687185</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1613420687185</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Doctor Module&#10;1- Forget Password&#10;2- Chat not Dynamic&#10;3- Verification code 'integration with SMS'&#10;&#10;&#10;&#10;Patient Module&#10;1-chat not dynamic&#10;2- forget password&#10;3- doctor-list- Map icon not clickable&#10;4- Slot in doctor details not dynamic&#10;5- Home visit screens not implemented&#10;6- Online consultation not implement 'another service not chat refer to PDF file'">
+      <created>1613939671520</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1613939671522</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -574,8 +589,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="product info" />
-    <MESSAGE value="fixed doctor profile" />
     <MESSAGE value="fixed app profile" />
     <MESSAGE value="emr user data" />
     <MESSAGE value="duration not required" />
@@ -599,37 +612,39 @@
     <MESSAGE value="latest version" />
     <MESSAGE value="help" />
     <MESSAGE value="fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed" />
+    <MESSAGE value="doctor help &amp; terms" />
+    <MESSAGE value="Doctor Module&#10;1- Forget Password&#10;2- Chat not Dynamic&#10;3- Verification code 'integration with SMS'&#10;&#10;&#10;&#10;Patient Module&#10;1-chat not dynamic&#10;2- forget password&#10;3- doctor-list- Map icon not clickable&#10;4- Slot in doctor details not dynamic&#10;5- Home visit screens not implemented&#10;6- Online consultation not implement 'another service not chat refer to PDF file'" />
+    <option name="LAST_COMMIT_MESSAGE" value="Doctor Module&#10;1- Forget Password&#10;2- Chat not Dynamic&#10;3- Verification code 'integration with SMS'&#10;&#10;&#10;&#10;Patient Module&#10;1-chat not dynamic&#10;2- forget password&#10;3- doctor-list- Map icon not clickable&#10;4- Slot in doctor details not dynamic&#10;5- Home visit screens not implemented&#10;6- Online consultation not implement 'another service not chat refer to PDF file'" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1612734643170">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1613863128743">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1612734643170" />
-    <state x="585" y="108" key="CommitChangelistDialog2" timestamp="1613261360944">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613863128743" />
+    <state x="585" y="0" key="CommitChangelistDialog2" timestamp="1613939670782">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="108" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1613261360944" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1612277330319">
+    <state x="585" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1613939670782" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1613847874844">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1612277330319" />
-    <state x="727" y="243" key="NewPhpClassDialog" timestamp="1609243399304">
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1613847874844" />
+    <state x="727" y="243" key="NewPhpClassDialog" timestamp="1613852393728">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="727" y="243" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609243399304" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1613261362605">
+    <state x="727" y="243" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613852393728" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1613939673060">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1613261362605" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1613939673060" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1612016473544">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1612016473544" />
-    <state x="667" y="253" width="891" height="772" key="find.popup" timestamp="1613257859471">
+    <state x="667" y="253" width="891" height="772" key="find.popup" timestamp="1613857428323">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="667" y="253" width="891" height="772" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613257859471" />
+    <state x="667" y="253" width="891" height="772" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613857428323" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1609287725167">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

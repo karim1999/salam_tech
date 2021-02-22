@@ -153,7 +153,7 @@ class Doctor extends Authenticatable
             $free = $this->IsFree($date, $slotFrom, $slotTo);
 
             if ($free && $slotTo <= $to)
-                $freeSlots[] = ['from' => $slotFrom->toDateTimeString(), 'to' => $slotTo->toDateTimeString()];
+                $freeSlots[] = ['from' => $slotFrom->timestamp, 'to' => $slotTo->timestamp];
             $slotFrom = $slotTo;
         }
         return $freeSlots;

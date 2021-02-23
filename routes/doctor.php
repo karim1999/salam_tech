@@ -25,6 +25,8 @@ Route::middleware('locale')->namespace('Doctor')->prefix('doctors')->group(funct
     Route::get('terms', 'GeneralController@terms');
     Route::get('policy', 'GeneralController@policy');
     Route::get('help', 'GeneralController@help');
+    Route::get('appfaq', 'GeneralController@appfaq');
+    Route::get('canfaq', 'GeneralController@canfaq');
 
     Route::get('cities', 'GeneralController@cities');
     Route::get('specialists', 'GeneralController@specialists');

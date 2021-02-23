@@ -60,4 +60,16 @@ class GeneralController extends Controller
         $data['help'] = Setting::first()["doctor_help_$lang"];
         return $this->successResponse($data);
     }
+    public function appfaq()
+    {
+        $lang = $this->lang();
+        $data['appfaq'] = Setting::first()["doctor_appfaq_$lang"];
+        return $this->successResponse($data);
+    }
+    public function canfaq()
+    {
+        $lang = $this->lang();
+        $data['canfaq'] = Setting::first()["doctor_canfaq_$lang"];
+        return $this->successResponse($data);
+    }
 }

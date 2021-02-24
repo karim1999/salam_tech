@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3966a211-dab0-4cbc-8a80-892bc4c80047" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MessageInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/VodafoneAdapter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Clinic/ForgotPasswordController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Doctor/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Doctor/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Clinic.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Clinic.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/clinic.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/clinic.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +156,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers/User" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers/Clinic" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -166,15 +167,15 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\projects\web\mr_anis\salamtech\api\app\Models" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\projects\web\mr_anis\salamtech\api\app\Http\Controllers\Clinic" />
       <recent name="C:\projects\web\mr_anis\salamtech\api\app\Http\Controllers\User" />
       <recent name="C:\projects\web\mr_anis\salamtech\api\resources\views\auth\emails" />
       <recent name="C:\projects\web\mr_anis\salamtech\api\database\migrations" />
       <recent name="C:\projects\web\mr_anis\salamtech\api\resources\views\vendor\admin\partials" />
-      <recent name="C:\projects\web\mr_anis\salamtech\api\resources\views\vendor\laravel-admin" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\projects\web\mr_anis\salamtech\api\app\Models" />
     </key>
   </component>
   <component name="RunManager">
@@ -240,14 +241,7 @@
       <workItem from="1614039007038" duration="1395000" />
       <workItem from="1614079379680" duration="11000" />
       <workItem from="1614083977431" duration="558000" />
-      <workItem from="1614178275848" duration="2826000" />
-    </task>
-    <task id="LOCAL-00008" summary="Final">
-      <created>1609428078643</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1609428078644</updated>
+      <workItem from="1614178275848" duration="3741000" />
     </task>
     <task id="LOCAL-00009" summary="test">
       <created>1609431530006</created>
@@ -585,7 +579,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614084522017</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="sms">
+      <created>1614182428375</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1614182428375</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -595,7 +596,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="duration not required" />
     <MESSAGE value="emr" />
     <MESSAGE value="doctor data" />
     <MESSAGE value="clinic type" />
@@ -620,17 +620,18 @@
     <MESSAGE value="Doctor Module&#10;1- Forget Password&#10;2- Chat not Dynamic&#10;3- Verification code 'integration with SMS'&#10;&#10;&#10;&#10;Patient Module&#10;1-chat not dynamic&#10;2- forget password&#10;3- doctor-list- Map icon not clickable&#10;4- Slot in doctor details not dynamic&#10;5- Home visit screens not implemented&#10;6- Online consultation not implement 'another service not chat refer to PDF file'" />
     <MESSAGE value="fixed forget pass" />
     <MESSAGE value="appfaq" />
-    <option name="LAST_COMMIT_MESSAGE" value="appfaq" />
+    <MESSAGE value="sms" />
+    <option name="LAST_COMMIT_MESSAGE" value="sms" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1613863128743">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614182553818">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613863128743" />
-    <state x="585" y="0" key="CommitChangelistDialog2" timestamp="1614084521357">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614182553818" />
+    <state x="585" y="0" key="CommitChangelistDialog2" timestamp="1614182427753">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1614084521357" />
+    <state x="585" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1614182427753" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1613847874844">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -639,10 +640,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="727" y="243" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613852393728" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1614084523098">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1614182429349">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614084523098" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614182429349" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1612016473544">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

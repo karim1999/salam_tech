@@ -17,8 +17,10 @@ Route::middleware('locale')->namespace('Clinic')->prefix('clinics')->group(funct
     Route::post('login', 'AuthController@login');
     Route::post('sendVerifyCode', 'AuthController@sendVerifyCode');
     Route::post('register', 'AuthController@register');
-    Route::post('forgetPassword', 'AuthController@forgetPassword');
-    Route::post('resetPassword', 'AuthController@resetPassword');
+    Route::post('forgetPassword', 'ForgotPasswordController@forgot');
+    Route::post('resetPassword', 'ForgotPasswordController@reset');
+//    Route::post('forgetPassword', 'AuthController@forgetPassword');
+//    Route::post('resetPassword', 'AuthController@resetPassword');
 
     Route::get('terms', 'GeneralController@terms');
     Route::post('cities', 'GeneralController@cities');

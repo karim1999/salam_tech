@@ -124,6 +124,12 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
+        'clinics' => [
+            'provider' => 'clinics',
+            'table' => 'clinics_password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
     ],
 
     /*

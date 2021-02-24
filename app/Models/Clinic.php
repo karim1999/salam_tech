@@ -2,11 +2,14 @@
 
 namespace App\Models;
 
+use App\Notifications\ResetPasswordNotification;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Storage;
 
 class Clinic extends Authenticatable
 {
+    use Notifiable;
     protected $fillable = [
         'name',
         'email',
@@ -118,4 +121,9 @@ class Clinic extends Authenticatable
     {
         return $this->hasMany(ClinicProduct::class, 'clinic_id');
     }
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new ResetPasswordNotification($token, "https://clinic.salam-tech.com/auth/reset-pw"));
+    }
+
 }

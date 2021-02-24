@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\VodafoneAdapter;
 use App\Models\Token;
 use App\Models\User;
 use Illuminate\Support\Facades\Validator;
@@ -49,7 +50,23 @@ class AuthController extends Controller
             return $this->errorResponse(__('lang.InvalidData'), $validator->errors());
         }
 
-        $data['code'] = 4444;
+        $messageProviderInstance = new VodafoneAdapter([
+            'accountId' => '200001222',
+            'password' => 'Vodafone.1',
+            'secretKey' => '4BFDB34E30CB466396CD88A2005E7113',
+            'senderName' => 'SALAMTECH',
+        ]);
+
+        $digits = 4;
+        $code= rand(pow(10, $digits-1), pow(10, $digits)-1);
+
+        $data['result'] = $messageProviderInstance->send([
+            'to' => request()->post('phone'),
+            'text' => 'Your Code is: '.$code,
+        ]);
+
+
+        $data['code'] = $code;
         return $this->successResponse($data);
     }
 

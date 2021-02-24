@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3966a211-dab0-4cbc-8a80-892bc4c80047" name="Default Changelist" comment="fixed forget pass">
+    <list default="true" id="3966a211-dab0-4cbc-8a80-892bc4c80047" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MessageInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/VodafoneAdapter.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Doctor/GeneralController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Doctor/GeneralController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/GeneralController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/GeneralController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/doctor.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/doctor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Doctor/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Doctor/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/AuthController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,14 +239,8 @@
       <workItem from="1614009188058" duration="4237000" />
       <workItem from="1614039007038" duration="1395000" />
       <workItem from="1614079379680" duration="11000" />
-      <workItem from="1614083977431" duration="536000" />
-    </task>
-    <task id="LOCAL-00007" summary="Footer">
-      <created>1609358955640</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1609358955640</updated>
+      <workItem from="1614083977431" duration="558000" />
+      <workItem from="1614178275848" duration="2826000" />
     </task>
     <task id="LOCAL-00008" summary="Final">
       <created>1609428078643</created>
@@ -584,7 +578,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614022062823</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="appfaq">
+      <created>1614084522016</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1614084522017</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -594,7 +595,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="emr user data" />
     <MESSAGE value="duration not required" />
     <MESSAGE value="emr" />
     <MESSAGE value="doctor data" />
@@ -619,17 +619,18 @@
     <MESSAGE value="doctor help &amp; terms" />
     <MESSAGE value="Doctor Module&#10;1- Forget Password&#10;2- Chat not Dynamic&#10;3- Verification code 'integration with SMS'&#10;&#10;&#10;&#10;Patient Module&#10;1-chat not dynamic&#10;2- forget password&#10;3- doctor-list- Map icon not clickable&#10;4- Slot in doctor details not dynamic&#10;5- Home visit screens not implemented&#10;6- Online consultation not implement 'another service not chat refer to PDF file'" />
     <MESSAGE value="fixed forget pass" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed forget pass" />
+    <MESSAGE value="appfaq" />
+    <option name="LAST_COMMIT_MESSAGE" value="appfaq" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1613863128743">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613863128743" />
-    <state x="585" y="0" key="CommitChangelistDialog2" timestamp="1614038155385">
+    <state x="585" y="0" key="CommitChangelistDialog2" timestamp="1614084521357">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1614038155385" />
+    <state x="585" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1614084521357" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1613847874844">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -638,10 +639,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="727" y="243" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613852393728" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1614022064226">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1614084523098">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614022064226" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614084523098" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1612016473544">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
